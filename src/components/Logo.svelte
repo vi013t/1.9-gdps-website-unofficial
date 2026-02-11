@@ -1,28 +1,107 @@
 <script lang="ts">
-	let { text = "1.9", size = "40rem" }: { text?: string, size?: string } = $props();
+	let { text = '1.9', size = '10rem' }: { text?: string; size?: string } = $props();
 </script>
 
-<svg width="0" height="0">
-    <filter id="round-corners">
-        <!-- Adjust stdDeviation to control the radius of the corners -->
-        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9" result="goo" />
-        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-    </filter>
-</svg>
-
-<div class="round-corners">
-	<div class="outer nonagon" style:width={size} style:height={size}>
-		<div class="blue-1"></div>
-		<div class="inner nonagon">
-			<span class="nonagon" style:font-size="calc({size} / 2.5)">{text}</span>
-		</div>
+<div class="outer nonagon" style:width={size} style:height={size}>
+	<div class="right blue"></div>
+	<div class="right green"></div>
+	<div class="purple"></div>
+	<div class="red"></div>
+	<div class="left blue"></div>
+	<div class="left green"></div>
+	<div class="bottom yellow"></div>
+	<div class="top yellow"></div>
+	<div class="inner nonagon">
+		<span class="nonagon" style:font-size="calc({size} / 2.5)">{text}</span>
 	</div>
 </div>
 
 <style>
-	.blue-1 {
-		background-color: red;
+	.outer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #82f2ff;
+	}
+
+	.blue {
+		background-color: #00baff;
+	}
+
+	.green {
+		background-color: #66ff00;
+	}
+
+	.yellow {
+		background-color: #f6ff00;
+	}
+
+	.purple {
+		background-color: #fa64ff;
+		width: 30%;
+		height: 30%;
+		position: absolute;
+		top: 14%;
+		right: 0%;
+		rotate: 75deg;
+	}
+
+	.right.blue {
+		width: 30%;
+		height: 35%;
+		position: absolute;
+		top: 34%;
+		right: 0%;
+		rotate: 63deg;
+	}
+
+	.right.green {
+		width: 30%;
+		height: 35%;
+		position: absolute;
+		top: 23%;
+		right: 0%;
+		rotate: 73deg;
+	}
+
+	.red {
+		background-image: radial-gradient(at 63% 15%, #fd8377, #fa433b, #fa433b);
+		width: 70%;
+		height: 70%;
+		position: absolute;
+		top: -22%;
+		right: 22%;
+		rotate: 48deg;
+	}
+
+	.bottom.yellow {
+		width: 50%;
+		height: 20%;
+		position: absolute;
+		top: 24%;
+		left: 0px;
+		rotate: 20deg;
+	}
+
+	.top.yellow {
+		width: 50%;
+		height: 10%;
+		position: absolute;
+		top: 22%;
+		left: 0px;
+		rotate: 35deg;
+	}
+
+	.left.green {
+		width: 50%;
+		height: 17%;
+		position: absolute;
+		top: 43%;
+		left: 0px;
+		rotate: 15deg;
+	}
+
+	.left.blue {
 		width: 50%;
 		height: 25%;
 		position: absolute;
@@ -31,39 +110,29 @@
 		rotate: 5deg;
 	}
 
-	svg {
-		position: absolute;
-		opacity: 0%;
-	}
-
-	.round-corners {
-		filter: url('#round-corners');
-		overflow: hidden;
-	}
-
 	.nonagon {
 		--radius: 50%;
 		--center: 50%;
 		position: relative;
 		clip-path: polygon(
 			calc(var(--center) + (sin(0.056turn) * var(--radius)))
-			calc(var(--center) - (cos(0.056turn) * var(--radius))),
+				calc(var(--center) - (cos(0.056turn) * var(--radius))),
 			calc(var(--center) + (sin(0.166turn) * var(--radius)))
-			calc(var(--center) - (cos(0.166turn) * var(--radius))),
+				calc(var(--center) - (cos(0.166turn) * var(--radius))),
 			calc(var(--center) + (sin(0.276turn) * var(--radius)))
-			calc(var(--center) - (cos(0.276turn) * var(--radius))),
+				calc(var(--center) - (cos(0.276turn) * var(--radius))),
 			calc(var(--center) + (sin(0.386turn) * var(--radius)))
-			calc(var(--center) - (cos(0.386turn) * var(--radius))),
+				calc(var(--center) - (cos(0.386turn) * var(--radius))),
 			calc(var(--center) + (sin(0.496turn) * var(--radius)))
-			calc(var(--center) - (cos(0.496turn) * var(--radius))),
+				calc(var(--center) - (cos(0.496turn) * var(--radius))),
 			calc(var(--center) + (sin(0.606turn) * var(--radius)))
-			calc(var(--center) - (cos(0.606turn) * var(--radius))),
+				calc(var(--center) - (cos(0.606turn) * var(--radius))),
 			calc(var(--center) + (sin(0.716turn) * var(--radius)))
-			calc(var(--center) - (cos(0.716turn) * var(--radius))),
+				calc(var(--center) - (cos(0.716turn) * var(--radius))),
 			calc(var(--center) + (sin(0.826turn) * var(--radius)))
-			calc(var(--center) - (cos(0.826turn) * var(--radius))),
+				calc(var(--center) - (cos(0.826turn) * var(--radius))),
 			calc(var(--center) + (sin(0.936turn) * var(--radius)))
-			calc(var(--center) - (cos(0.936turn) * var(--radius)))
+				calc(var(--center) - (cos(0.936turn) * var(--radius)))
 		);
 	}
 
@@ -76,15 +145,9 @@
 		justify-content: center;
 	}
 
-	.outer {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: cyan;
-	}
-
 	span {
-		font-family: "Protest Strike";
+		font-family: 'Google Sans Flex';
+		font-weight: bold;
 		width: 83%;
 		height: 83%;
 		color: white;
@@ -92,6 +155,27 @@
 		align-items: center;
 		justify-content: center;
 		background-image: linear-gradient(to bottom, #0d0548, #191969);
-		text-shadow: 0px 0px 0.15em black;
+		text-shadow:
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548,
+			0px 0px 0.08em #0d0548;
 	}
 </style>
