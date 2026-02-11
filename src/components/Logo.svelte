@@ -2,17 +2,20 @@
 	let { text = '1.9', size = '10rem' }: { text?: string; size?: string } = $props();
 </script>
 
-<div class="outer nonagon" style:width={size} style:height={size}>
-	<div class="right blue"></div>
-	<div class="right green"></div>
-	<div class="purple"></div>
-	<div class="red"></div>
-	<div class="left blue"></div>
-	<div class="left green"></div>
-	<div class="bottom yellow"></div>
-	<div class="top yellow"></div>
-	<div class="inner nonagon">
-		<span class="nonagon" style:font-size="calc({size} / 2.5)">{text}</span>
+<div class="container" style:width={size} style:height={size}>
+	<div class="shadow" style:filter="blur(calc({size} / 10))"></div>
+	<div class="outer nonagon" style:width={size} style:height={size}>
+		<div class="right blue"></div>
+		<div class="right green"></div>
+		<div class="purple"></div>
+		<div class="red"></div>
+		<div class="left blue"></div>
+		<div class="left green"></div>
+		<div class="bottom yellow"></div>
+		<div class="top yellow"></div>
+		<div class="inner nonagon">
+			<span class="nonagon" style:font-size="calc({size} / 2.5)">{text}</span>
+		</div>
 	</div>
 </div>
 
@@ -22,6 +25,21 @@
 		align-items: center;
 		justify-content: center;
 		background-color: #82f2ff;
+		transform: translate(-4%, -2%);
+	}
+
+	.container {
+		position: relative;
+	}
+
+	.shadow {
+		width: 100%;						
+		height: 100%;
+		background-color: black;
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		border-radius: 50%;
 	}
 
 	.blue {

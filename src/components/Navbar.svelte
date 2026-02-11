@@ -3,7 +3,9 @@
 </script>
 
 <nav>
-	<Logo size="5rem" />
+	<a>
+		<Logo size="3rem" />
+	</a>
 	<a>About</a>
 	<a>Install</a>
 	<a>Modding</a>
@@ -13,20 +15,20 @@
 <style>
 	nav {
 		display: flex;
-		padding: 1rem;
+		width: 100%;
+		box-shadow: 0px 0px 1rem black;
+		z-index: 999;
 
 		> * {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-family: 'Google Sans Flex';
-			font-size: 2rem;
-			padding-left: 2rem;
-			padding-right: 2rem;
-
-			&:first-of-type {
-				padding-left: 3rem;
-			}
+			font-size: 1.5rem;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+			padding-bottom: 0.5rem;
+			padding-top: 0.5rem;
 		}
+
 	}
 </style>
