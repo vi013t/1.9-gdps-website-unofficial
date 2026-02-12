@@ -1,5 +1,5 @@
 <script>
-	import background from "../assets/images/background.png";
+	import background from '../assets/images/background.png';
 	import Logo from '../components/Logo.svelte';
 	import Navbar from '../components/Navbar.svelte';
 </script>
@@ -11,7 +11,7 @@
 	<p>Unofficial docs, links, and more for the 1.9 Geometry Dash Private Server.</p>
 
 	<div class="buttons">
-		<button>Get Started</button>
+		<a href="/introduction">Get Started</a>
 	</div>
 </main>
 
@@ -24,7 +24,6 @@
 		gap: 2rem;
 		height: calc(100% - 4rem);
 		position: relative;
-		background-color: rgba(0, 0, 80, 80%);
 
 		* {
 			z-index: 99;
@@ -36,11 +35,11 @@
 			left: 0px;
 			width: 100%;
 			height: 100%;
-			content: "";
+			content: '';
 			background-image: var(--background);
 			background-size: cover;
 			background-position: center;
-			mix-blend-mode: multiply;
+			filter: brightness(20%) saturate(150%);
 		}
 
 		h1 {
@@ -63,10 +62,10 @@
 	.buttons {
 		margin-top: 1rem;
 
-		button {
-			background: 
+		> * {
+			background:
 				linear-gradient(to bottom right, aquamarine, mediumspringgreen) padding-box,
-				linear-gradient(to bottom right, transparent, #CCFFFA) border-box;
+				linear-gradient(to bottom right, transparent, #ccfffa) border-box;
 			border: 2px solid transparent;
 			padding: 1rem;
 			font-size: 1.2rem;
@@ -75,6 +74,7 @@
 			transition: scale 0.2s;
 			width: 10rem;
 			font-weight: 400;
+			color: black;
 
 			&:hover {
 				scale: 108%;
@@ -82,4 +82,3 @@
 		}
 	}
 </style>
-

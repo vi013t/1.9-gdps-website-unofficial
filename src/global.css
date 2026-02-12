@@ -26,3 +26,9 @@ video[controls],
 a {
 	cursor: pointer;
 }
+
+ul,
+ol,
+li {
+	list-style-type: none;
+}
