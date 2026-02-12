@@ -1,6 +1,9 @@
 <script lang="ts">
+	import BlueskyIcon from "../../components/icons/BlueskyIcon.svelte";
 	import CodeIcon from "../../components/icons/CodeIcon.svelte";
 	import DiscordIcon from "../../components/icons/DiscordIcon.svelte";
+	import TwitterIcon from "../../components/icons/TwitterIcon.svelte";
+	import YoutubeIcon from "../../components/icons/YoutubeIcon.svelte";
 	import Link from "../../components/Link.svelte";
 	import Page from "../../components/Page.svelte";
 </script>
@@ -33,7 +36,7 @@
 			The official 1.9 GDPS discord server is the best place for support relating to the 1.9 GDPS. There are channels for modding, level feedback, general support, and more. Join here:
 		</p>
 
-		<a href="https://discord.gg/eCGFrCG" class="discord">
+		<a target="_blank" rel="noopener noreferrer" href="https://discord.gg/eCGFrCG" class="discord">
 			<DiscordIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
 			Join the Discord
 		</a>
@@ -56,7 +59,7 @@
 
 				The source code for the 1.9 private server itself.
 
-				<a href="https://github.com/absoIute/1.9-GDPS">
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/absoIute/1.9-GDPS">
 					<CodeIcon stroke="white" style="width: 1.5em; height: 1.5em;"/>
 					View Source Code
 				</a>
@@ -66,7 +69,7 @@
 
 				The source code for the generic Geometry Dash server emulator. This supports all versions of the game, and is what the 1.9 GDPS is built on.
 
-				<a href="https://github.com/Cvolton/GMDprivateServer/">
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/Cvolton/GMDprivateServer/">
 					<CodeIcon stroke="white" style="width: 1.5em; height: 1.5em;"/>
 					View Source Code
 				</a>
@@ -76,7 +79,7 @@
 
 				The source code for the android build of the 1.9 GDPS.
 
-				<a href="https://github.com/qimiko/gdps-public">
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/qimiko/gdps-public">
 					<CodeIcon stroke="white" style="width: 1.5em; height: 1.5em;"/>
 					View Source Code
 				</a>
@@ -86,16 +89,64 @@
 
 				The source code for this website.
 
-				<a href="https://github.com/vi013t/1.9-gdps-website-unofficial">
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/vi013t/1.9-gdps-website-unofficial">
 					<CodeIcon stroke="white" style="width: 1.5em; height: 1.5em;"/>
 					View Source Code
 				</a>
 			</div>
 		</div>
 	</div>
+
+	<div class="section">
+		<h2>Other Links</h2>
+
+		<p>Here are some other miscellaneous links relating to the 1.9 GDPS:</p>
+
+		<div class="buttons">
+			<a href="https://www.youtube.com/channel/UCIUpOcn9GZ-IlEw34czouIg" class="youtube" target="_blank" rel="noopener noreferrer">
+				<YoutubeIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				1.9 GDPS YouTube
+			</a>
+			<a href="https://twitter.com/official19gdps" class="twitter" target="_blank" rel="noopener noreferrer">
+				<TwitterIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				1.9 GDPS Twitter
+			</a>
+			<a href="https://bsky.app/profile/19gdps.bsky.social" class="bluesky" target="_blank" rel="noopener noreferrer">
+				<BlueskyIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				1.9 GDPS BlueSky
+			</a>
+		</div>
+	</div>
+
 </Page>
 
 <style>
+	.bluesky {
+		background-color: #1185fe;
+		color: white;
+	}
+
+	.buttons {
+		display: flex;
+		gap: 4rem;
+		justify-content: center;
+		margin-top: 1rem;
+
+		> * {
+			margin: 0px;
+		}
+	}
+
+	.twitter {
+		background-color: #26a7de;
+		color: white;
+	}
+
+	.youtube {
+		background: #CD201F;
+		color: white;
+	}
+
 	a {
 		width: 15rem;
 		color: white;

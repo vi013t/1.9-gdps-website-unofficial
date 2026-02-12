@@ -5,6 +5,7 @@
 	import DownloadIcon from './icons/DownloadIcon.svelte';
 	import GeodeIcon from './icons/GeodeIcon.svelte';
 	import LightningIcon from './icons/LightningIcon.svelte';
+	import LinkIcon from './icons/LinkIcon.svelte';
 	import ModMenuIcon from './icons/ModMenuIcon.svelte';
 	import PaintRollerIcon from './icons/PaintRollerIcon.svelte';
 	import PlusIcon from './icons/PlusIcon.svelte';
@@ -103,6 +104,10 @@
 				<li>
 					<CodeIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
 					{@render link("Source Code", "/resources#source-code")}
+				</li>
+				<li>
+					<LinkIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Other Links", "/resources#other-links")}
 				</li>
 			</ul>
 		</li>

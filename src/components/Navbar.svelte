@@ -60,7 +60,7 @@
 			color: black;
 			transition: scale 0.2s;
 
-			&:hover {
+			&:is(a):hover {
 				scale: 108%;
 			}
 		}

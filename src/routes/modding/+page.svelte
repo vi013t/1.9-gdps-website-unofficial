@@ -81,14 +81,25 @@
 <div class="section">
 	<h2 id="other-mods">Other Mods</h2>
 
-	<p>Outside of PolzHax and PolzEdit, there exists a few smaller utility mods for the 1.9 GDPS, listed here:</p>
+	<p>Outside of PolzHax and PolzEdit, there exists a few smaller utility mods for the 1.9 GDPS:</p>
 
 	<div class="other-mods">
 		<div>
 			{@render modLink("Audio Offset Calculator", "https://github.com/Kingminer7/AudioOffsetCalculator/releases/tag/1.1.4-1.9")}
 
 			Allows easily setting music offsets.
-			<a class="download-button" download>
+			<a href="/download/km7dev.audio-offset.geode" class="download-button" download>
+				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+				Download
+			</a>
+		</div>
+
+		<div>
+			{@render modLink("Circle Tool", "https://discord.com/channels/328307969882062848/1399882752068948039/1429787277537579121")}
+			
+			Adds a circle button to the editor that creates easy circles out of objects.
+
+			<a href="/download/mat.circle-tool.geode" class="download-button" download>
 				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
 				Download
 			</a>
@@ -99,28 +110,41 @@
 			
 			Adds a confirmation screen when exiting a level. Note that PolzHax also comes with this built in.
 
-			<a class="download-button" download>
+			<a href="/download/solstacoded.confirm_exit.geode" class="download-button" download>
 				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
 				Download
 			</a>
 		</div>
 		<div>
-			{@render modLink("Hjfod's Backups", "https://github.com/HJfod/gd-backup")}
+			{@render modLink("Backups", "https://github.com/HJfod/gd-backup")}
 
 			Adds a backup button to back up user data.
 			
-			<a class="download-button" download>
+			<a href="/download/hjfod.backups.geode" class="download-button" download>
 				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
 				Download
 			</a>
 		</div>
 
 		<div>
-			{@render modLink("PolzEditor", "https://github.com/Kingminer7/AudioOffsetCalculator/releases/tag/1.1.4-1.9")}
+			{@render modLink("PolzEditor", "https://github.com/Pololak/PolzHax")}
 
 			Subset of PolzHax with only the editor-related features.
 
-			<a class="download-button" download>
+			<a href="pololak.polzeditor.geode" class="download-button" download>
+				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+				Download
+			</a>
+		</div>
+
+		<div>
+			{@render modLink("Quick Volume Controls", "https://github.com/HJfod/volume-scroll-wheel")}
+
+			<p>
+				Adds the ability to hold <code>Alt</code> and scroll to adjust volume. Holding <code>Shift</code> will only adjust SFX volume, and <code>Ctrl</code> will only adjust music volume.
+			</p>
+
+			<a href="/download/capeling.startpos-switcher-1920.geode" class="download-button" download>
 				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
 				Download
 			</a>
@@ -132,18 +156,18 @@
 			Adds buttons and keybinds to switch between multiple start positions in a level easily.
 			Note that PolzHax also comes with a startpos switcher built in.
 
-			<a class="download-button" download>
+			<a href="/download/capeling.startpos-switcher-1920.geode" class="download-button" download>
 				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
 				Download
 			</a>
 		</div>
 
 		<div>
-			{@render modLink("Textureldr", "https://github.com/geode-sdk/textureldr")}
+			{@render modLink("Texture Loader", "https://github.com/geode-sdk/textureldr")}
 
 			Loads texture packs. Texture packs can locally change the in-game UI elements, objects, and icons.
 
-			<a class="download-button" download>
+			<a href="/download/geode.texture-loader.geode" class="download-button" download>
 				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
 				Download
 			</a>
@@ -185,8 +209,13 @@
 			padding: 1rem;
 			gap: 1rem;
 			border: 2px solid #aaaadd;
-			height: 15rem;
+			height: 16rem;
 			box-shadow: 0px 0px 1em black;
+
+			p:is(p) {
+				font-size: 1rem;
+				margin-top: 0px;
+			}
 		}
 
 		.download-button {

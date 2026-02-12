@@ -79,6 +79,7 @@
 				background: rgba(0, 0, 0, 40%);
 				padding: 0.2em;
 				border-radius: 0.3em;
+				display: inline;
 			}
 
 			:global(h1) {
@@ -113,6 +114,7 @@
 				margin-top: 3rem;
 				display: flex;
 				flex-direction: column;
+				box-shadow: 0px 0px 1rem black;
 			}
 
 			:global(i) {
