@@ -3,7 +3,7 @@
 	import Page from '../../components/Page.svelte';
 </script>
 
-<Page>
+<Page previous={{ text: "Introduction", url: "/introduction" }} next={{ text: "Modding", url: "/modding" }}>
 	<div class="section">
 		<h1>Using the 1.9 GDPS</h1>
 
@@ -36,7 +36,7 @@
 		</p>
 
 		<p>
-			To transfer levels to and from the official 2.2 servers, we're going to download our levels as GMD files and then upload them to the other server. To do so, you need to <Link href="https://geode-sdk.org/install">install Geode to your 2.2 client</Link> and install the <Link href="https://geode-sdk.org/mods/hjfod.gdshare">GDShare</Link>.
+			To transfer levels to and from the official 2.2 servers, we're going to download our levels as GMD files and then upload them to the other server. To do so, you need to <Link href="https://geode-sdk.org/install">install Geode to your 2.2 client</Link> and install the <Link href="https://geode-sdk.org/mods/hjfod.gdshare">GDShare</Link> mod for more information on Geode, check out the <Link href="/modding#modding-with-geode">Modding With Geode</Link> documentation.
 		</p>
 
 		<p>

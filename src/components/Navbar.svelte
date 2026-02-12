@@ -7,7 +7,12 @@
 
 	let showAiTooltip = $state(false);
 	let showProgressTooltip = $state(false);
+
+	let innerWidth = $state(0);
+	let innerHeight = $state(0);
 </script>
+
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <nav>
 	<a href="/">
@@ -17,16 +22,18 @@
 	<a href="/demon-list">Demon List</a>
 	<a>FAQ</a>
 
-	<div class="no-ai" onmouseenter={() => showAiTooltip = true} onmouseleave={() => showAiTooltip = false}>
-		<RobotIcon stroke="black" style="width: 1.5em; height: 1.5em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" />
-		<NotAllowedIcon stroke="red" style="width: 1.5em; height: 1.5em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" />
-		<Tooltip bind:visible={showAiTooltip}>No AI was used in the making of this website.</Tooltip>
-	</div>
+	{#if innerWidth > innerHeight}
+		<div class="no-ai" onmouseenter={() => showAiTooltip = true} onmouseleave={() => showAiTooltip = false}>
+			<RobotIcon stroke="black" style="width: 1.5em; height: 1.5em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" />
+			<NotAllowedIcon stroke="red" style="width: 1.5em; height: 1.5em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" />
+			<Tooltip bind:visible={showAiTooltip}>No AI was used in the making of this website.</Tooltip>
+		</div>
 
-	<div onmouseenter={() => showProgressTooltip = true} onmouseleave={() => showProgressTooltip = false}>
-		<img src={progressFlag} alt="progress flag"/>
-		<Tooltip bind:visible={showProgressTooltip}>This website supports DEI, LGBTQ+, and trans rights!</Tooltip>
-	</div>
+		<div onmouseenter={() => showProgressTooltip = true} onmouseleave={() => showProgressTooltip = false}>
+			<img src={progressFlag} alt="progress flag"/>
+			<Tooltip bind:visible={showProgressTooltip}>This website supports DEI, LGBTQ+, and trans rights!</Tooltip>
+		</div>
+	{/if}
 </nav>
 
 <style>
@@ -36,30 +43,48 @@
 		box-shadow: 0px 0px 1rem black;
 		z-index: 9999;
 		background-color: white;
-		padding-right: 1rem;
+		gap: 2rem;
+		align-items: center;
+		padding-right: 2rem;
+		padding-left: 1.4rem;
 
 		> * {
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			font-size: 1.5rem;
-			padding-left: 1.5rem;
-			padding-right: 1.5rem;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
 			padding-bottom: 0.5rem;
 			padding-top: 0.5rem;
 			color: black;
+			transition: scale 0.2s;
+
+			&:hover {
+				scale: 108%;
+			}
 		}
 
 		.no-ai {
 			margin-left: auto;
 			position: relative;
-			height: 100%;
+			width: 3rem;
+			height: 3rem;
 			aspect-ratio: 1;
-			margin-top: 0.5rem;
+			padding: 0px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
-		:has(img) {
+		:has(> img) {
 			position: relative;
+			padding: 0px;
+			height: 3rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
 			img {
 				height: 2rem;
 			}

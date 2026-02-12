@@ -1,9 +1,10 @@
 <script>
 	import Logo from '../components/Logo.svelte';
 	import Navbar from '../components/Navbar.svelte';
+	import VideoBackground from "../components/VideoBackground.svelte";
 </script>
 
-<iframe width="1593" height="896" src="https://www.youtube.com/embed/xwjrHVtrzSo?autoplay=1&mute=1&showinfo=0&controls=0&modestbranding=1&rel=0" title="(Extreme Demon) &#39;&#39;Another Ascent&#39;&#39; by Cersia | Geometry Dash" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<VideoBackground />
 <Navbar />
 <main>
 	<h1>GDPS</h1>
@@ -16,18 +17,6 @@
 </main>
 
 <style>
-	iframe {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		left: 0px;
-		z-index: -1;
-		pointer-events: none;
-		filter: brightness(20%);
-		scale: 110%;
-		transform: translateY(-4%);
-	}
-
 	main {
 		display: flex;
 		flex-direction: column;

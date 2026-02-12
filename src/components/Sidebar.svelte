@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CheckIcon from './icons/CheckIcon.svelte';
 	import CodeIcon from './icons/CodeIcon.svelte';
 	import DiscordIcon from './icons/DiscordIcon.svelte';
 	import DownloadIcon from './icons/DownloadIcon.svelte';
@@ -12,17 +13,29 @@
 	import TransferIcon from './icons/TransferIcon.svelte';
 	import Link from './Link.svelte';
 	import Logo from './Logo.svelte';
+
+
+	let innerWidth = $state(0);
+	let innerHeight = $state(0);
+
+	let visible = $derived(innerWidth > innerHeight)
+
+	export function isHidden() {
+		return visible;
+	}
 </script>
 
 {#snippet link(text: string, href: string, top?: true)}
 	<Link style="color: {top ? "white" : "#ccccff"}; font-size: 1.2rem;" {href}>{text}</Link>
 {/snippet}
 
-<section>
-	<h1>
+<svelte:window bind:innerWidth bind:innerHeight />
+
+<section style:transform="translateX({visible ? "0%" : "-100%"})" style:position={visible ? "sticky" : "fixed"}>
+	<a href="/">
 		<Logo size="3rem" />
 		1.9 GDPS
-	</h1>
+	</a>
 
 	<ul>
 		<li>
@@ -70,18 +83,22 @@
 					<PlusIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
 					{@render link("Other Mods", "/modding#other-mods")}
 				</li>
+				<li>
+					<PaintRollerIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Texture Packs", "/modding#texture-packs")}
+				</li>
 			</ul>
 		</li>
 		<li>
 			{@render link("Resources", "/resources", true)}
 			<ul>
 				<li>
-					<DiscordIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link("Discord Server", "/resources#discord")}
+					<CheckIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Official Website", "/resources#official-website")}
 				</li>
 				<li>
-					<PaintRollerIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link("Texture Packs", "/resources#texture-packs")}
+					<DiscordIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Discord Server", "/resources#discord")}
 				</li>
 				<li>
 					<CodeIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
@@ -93,15 +110,18 @@
 </section>
 
 <style>
-	h1 {
+
+	a {
 		display: flex;
 		gap: 1rem;
 		align-items: center;
+		justify-content: center;
 		color: #ddddff;
 		font-weight: bold;
 		background: #11111b;
 		width: 100%;
 		padding: 1rem 2rem 1rem 2rem;
+		font-size: 2rem;
 	}
 
 	section {
@@ -124,11 +144,6 @@
 	ul ul {
 		margin-left: 2rem;
 		margin-bottom: 1rem;
-	}
-
-	a:has(+ ul) {
-		color: white;
-		font-size: 1.2rem;
 	}
 
 	ul:has(ul) {

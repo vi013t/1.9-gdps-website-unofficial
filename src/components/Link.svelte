@@ -5,7 +5,7 @@
 
 	let { href, children, ...attributes }: { href: string; children?: Snippet } & HTMLAttributes<HTMLAnchorElement> = $props();
 
-	let isExternal = $derived(!href.startsWith('/'));
+	let isExternal = $derived(!href.startsWith('/') && !href.startsWith("#"));
 </script>
 
 {#if isExternal}

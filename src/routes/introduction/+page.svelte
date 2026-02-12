@@ -6,7 +6,7 @@
 	import Page from '../../components/Page.svelte';
 </script>
 
-<Page>
+<Page next={{ text: "Using the 1.9 GDPS", url: "/use"}}>
 	<div class="section">
 		<h1>Introduction</h1>
 
@@ -82,10 +82,17 @@
 </Page>
 
 <style>
+	@media(max-width: 1900px) {
+		.installation {
+			flex-direction: column;
+		}
+	}
+
 	.installation {
 		display: flex;
 		width: 100%;
 		justify-content: center;
+		align-items: center;
 		gap: 2rem;
 		padding: 1rem;
 

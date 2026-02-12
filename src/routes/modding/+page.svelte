@@ -11,12 +11,15 @@
 	<Link style="color: white; font-size: 1.4rem; font-weight: 500;" href={link}>{name}</Link>
 {/snippet}
 
-<Page>
-	<h1>Modding</h1>
+<Page previous={{ text: "Using the 1.9 GDPS", url: "/use" }} next={{ text: "Resources", url: "/resources" }}>
 
-	<p>
-		<b>Mods</b> allow users to add or change features within the game.
-	</p>
+	<div class="section">
+		<h1>Modding</h1>
+
+		<p>
+			<b>Mods</b> allow users to add or change features within the game.
+		</p>
+	</div>
 
 	<div class="section">
 	<h2 id="modding-with-geode">Modding With Geode</h2>
@@ -158,6 +161,14 @@
 		padding: 1rem;
 	}
 
+	@media(max-width: 1900px) {
+		.other-mods {
+			width: 100%;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
 	.other-mods {
 		display: flex;
 		flex-wrap: wrap;
@@ -175,6 +186,7 @@
 			gap: 1rem;
 			border: 2px solid #aaaadd;
 			height: 15rem;
+			box-shadow: 0px 0px 1em black;
 		}
 
 		.download-button {

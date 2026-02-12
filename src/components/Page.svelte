@@ -1,36 +1,52 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import RightArrowIcon from './icons/RightArrowIcon.svelte';
 	import Navbar from './Navbar.svelte';
 	import Sidebar from './Sidebar.svelte';
+	import VideoBackground from './VideoBackground.svelte';
 
-	let { children, nosidebar = false }: { children: Snippet, nosidebar?: boolean } = $props();
+	let { 
+		children, 
+		nosidebar = false, 
+		next = undefined,
+		previous = undefined
+	}: { 
+		children: Snippet, 
+		nosidebar?: boolean, 
+		next?: { url: string; text: string },
+		previous?: { url: string; text: string }
+	} = $props();
+
+	let sidebar: Sidebar | null = $state(null);
 </script>
 
-<iframe width="1593" height="896" src="https://www.youtube.com/embed/xwjrHVtrzSo?autoplay=1&mute=1&showinfo=0&controls=0&modestbranding=1&rel=0&loop=1&playlist=xwjrHVtrzSo" title="(Extreme Demon) &#39;&#39;Another Ascent&#39;&#39; by Cersia | Geometry Dash" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<VideoBackground />
 <Navbar />
 <main>
 	{#if !nosidebar}
-		<Sidebar />
+		<Sidebar bind:this={sidebar} />
 	{/if}
-	<section class="introduction section">
+	<section class="section">
 		{@render children()}
+
+		<div class="nav-buttons">
+			{#if previous}
+				<a class="previous" href={previous.url}>
+					<RightArrowIcon stroke="black" style="width: 1rem; height: 1rem; rotate: 180deg;" />
+					{previous.text}
+				</a>
+			{/if}
+			{#if next}
+				<a class="next" href={next.url}>
+					{next.text}
+					<RightArrowIcon stroke="black" style="width: 1rem; height: 1rem;" />
+				</a>
+			{/if}
+		</div>
 	</section>
 </main>
 
 <style>
-	iframe {
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		left: 0px;
-		z-index: -1;
-		pointer-events: none;
-		filter: brightness(15%);
-		scale: 110%;
-		transform: translateY(-4%);
-	}
-
 	main {
 		display: flex;
 		width: 100%;
@@ -39,11 +55,24 @@
 			z-index: 99;
 		}
 
+		@media(min-width: 1900px) {
+			.section {
+				width: 60%;
+			}
+		}
+
+		@media(max-width: 1900px) {
+			.section {
+				width: 100%;
+			}
+		}
+
 		.section {
 			padding: 3rem;
-			width: 60%;
 			margin-left: auto;
 			margin-right: auto;
+			display: flex;
+			flex-direction: column;
 
 			:global(code) {
 				font-family: monospace;
@@ -77,7 +106,7 @@
 			}
 
 			:global(.section) {
-				background: #11111b;
+				background: linear-gradient(to bottom right, #1e1e2e, #11111b);
 				padding: 2rem;
 				border: 2px solid #ccccff;
 				border-radius: 1em;
@@ -95,5 +124,41 @@
 				color: #ccccff;
 			}
 		}
+	}
+
+	a {
+		width: 15rem;
+		color: black;
+		border-radius: 0.5rem;
+		transition: scale 0.1s;
+		box-shadow: 0px 0px 1em black;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 3em;
+		font-size: 1rem;
+		gap: 0.5em;
+		font-weight: 500;
+
+		&:hover {
+			scale: 108%;
+			text-decoration: none;
+		}
+	}
+
+	.nav-buttons {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+		gap: 3rem;
+	}
+
+	.previous {
+		background-image: linear-gradient(to bottom right, #fab387, #f38ba8);
+	}
+
+	.next {
+		background-image: linear-gradient(to bottom right, #94e2d5, #a6e3a1);
 	}
 </style>
