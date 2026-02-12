@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import ExternalLinkIcon from './icons/ExternalLinkIcon.svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
+	import ExternalLinkIcon from './icons/ExternalLinkIcon.svelte';
 
 	let { href, children, ...attributes }: { href: string; children?: Snippet } & HTMLAttributes<HTMLAnchorElement> = $props();
 
@@ -15,7 +15,7 @@
 		{:else}
 			{href}
 		{/if}
-		<ExternalLinkIcon stroke="cornflowerblue" style="width: 1em; height: 1em;" />
+		<ExternalLinkIcon stroke="currentColor" style="width: 1em; height: 1em;" />
 	</a>
 {:else}
 	<a {href} {...attributes}>
@@ -29,11 +29,12 @@
 
 <style>
 	a {
-		color: cornflowerblue;
+		color: #89b4fa;
 		display: inline-flex;
 		align-items: center;
 		gap: 0.25em;
 		position: relative;
+		width: fit-content;
 
 		&::after {
 			content: '';

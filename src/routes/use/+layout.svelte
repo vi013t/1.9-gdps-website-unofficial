@@ -8,7 +8,7 @@
 <svelte:head>
 	<link rel="stylesheet" href={globalCss} />
 	<link rel="icon" href={logo} />
-	<title>1.9 GDPS - Introduction</title>
+	<title>1.9 GDPS - Using the 1.9 GDPS</title>
 </svelte:head>
 
 {@render children()}

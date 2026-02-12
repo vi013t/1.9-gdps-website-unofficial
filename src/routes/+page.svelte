@@ -1,11 +1,11 @@
 <script>
-	import background from '../assets/images/background.png';
 	import Logo from '../components/Logo.svelte';
 	import Navbar from '../components/Navbar.svelte';
 </script>
 
+<iframe width="1593" height="896" src="https://www.youtube.com/embed/xwjrHVtrzSo?autoplay=1&mute=1&showinfo=0&controls=0&modestbranding=1&rel=0" title="(Extreme Demon) &#39;&#39;Another Ascent&#39;&#39; by Cersia | Geometry Dash" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <Navbar />
-<main style:--background="url('{background}')">
+<main>
 	<h1>GDPS</h1>
 	<Logo size="20rem" />
 	<p>Unofficial docs, links, and more for the 1.9 Geometry Dash Private Server.</p>
@@ -16,6 +16,18 @@
 </main>
 
 <style>
+	iframe {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0px;
+		z-index: -1;
+		pointer-events: none;
+		filter: brightness(20%);
+		scale: 110%;
+		transform: translateY(-4%);
+	}
+
 	main {
 		display: flex;
 		flex-direction: column;
@@ -27,19 +39,6 @@
 
 		* {
 			z-index: 99;
-		}
-
-		&::before {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			width: 100%;
-			height: 100%;
-			content: '';
-			background-image: var(--background);
-			background-size: cover;
-			background-position: center;
-			filter: brightness(20%) saturate(150%);
 		}
 
 		h1 {

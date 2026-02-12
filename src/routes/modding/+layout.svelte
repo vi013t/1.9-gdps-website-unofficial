@@ -1,3 +1,4 @@
+
 <script lang="ts">
 	let { children } = $props();
 
@@ -8,7 +9,7 @@
 <svelte:head>
 	<link rel="stylesheet" href={globalCss} />
 	<link rel="icon" href={logo} />
-	<title>1.9 GDPS - Introduction</title>
+	<title>1.9 GDPS - Modding</title>
 </svelte:head>
 
 {@render children()}

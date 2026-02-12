@@ -1,7 +1,22 @@
-<script>
+<script lang="ts">
+	import CodeIcon from './icons/CodeIcon.svelte';
+	import DiscordIcon from './icons/DiscordIcon.svelte';
+	import DownloadIcon from './icons/DownloadIcon.svelte';
+	import GeodeIcon from './icons/GeodeIcon.svelte';
+	import LightningIcon from './icons/LightningIcon.svelte';
+	import ModMenuIcon from './icons/ModMenuIcon.svelte';
+	import PaintRollerIcon from './icons/PaintRollerIcon.svelte';
+	import PlusIcon from './icons/PlusIcon.svelte';
+	import QuestionMarkIcon from './icons/QuestionMarkIcon.svelte';
+	import RaceIcon from './icons/RaceIcon.svelte';
+	import TransferIcon from './icons/TransferIcon.svelte';
 	import Link from './Link.svelte';
 	import Logo from './Logo.svelte';
 </script>
+
+{#snippet link(text: string, href: string, top?: true)}
+	<Link style="color: {top ? "white" : "#ccccff"}; font-size: 1.2rem;" {href}>{text}</Link>
+{/snippet}
 
 <section>
 	<h1>
@@ -11,55 +26,66 @@
 
 	<ul>
 		<li>
-			<Link style="color: white; font-size: 1.2rem;" href="/introduction">Introduction</Link>
+			{@render link("Introduction", "/introduction", true)}
 			<ul>
 				<li>
-					<Link style="color: #ccccff; font-size: 1.2rem;" href="/introduction#what-is-gdps">What is the 1.9 GDPS?</Link>
+					<QuestionMarkIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("What is the 1.9 GDPS?", "/introduction#what-is-gdps")}
 				</li>
 				<li>
-					<Link style="color: #ccccff; font-size: 1.2rem;" href="/introduction#installation">Installation</Link>
+					<DownloadIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Installation", "/introduction#installation")}
 				</li>
 				<li>
-					<Link style="color: #ccccff; font-size: 1.2rem;" href="/introduction#getting-started">Getting Started</Link>
+					<RaceIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Getting Started", "/introduction#getting-started")}
 				</li>
 			</ul>
 		</li>
 		<li>
-			<a>Use &amp; Navigation</a>
+			{@render link("Using the 1.9 GDPS", "/use", true)}
 			<ul>
 				<li>
-					<a>The Mod Menu</a>
+					<ModMenuIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("The Mod Menu", "/use#mod-menu")}
 				</li>
 				<li>
-					<a>Transferring Levels</a>
+					<TransferIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Transferring Levels", "/use#transferring-levels")}
 				</li>
 			</ul>
 		</li>
 		<li>
-			<Link style="color: white; font-size: 1.2rem;" href="/modding">Modding</Link>
+			{@render link("Modding", "/modding", true)}
 			<ul>
 				<li>
-					<a>Modding with Geode</a>
+					<GeodeIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Modding With Geode", "/modding#modding-with-geode")}
 				</li>
 				<li>
-					<a>PolzHax</a>
+					<LightningIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("PolzHax", "/modding#polzhax")}
 				</li>
 				<li>
-					<a>Other Mods</a>
+					<PlusIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Other Mods", "/modding#other-mods")}
 				</li>
 			</ul>
 		</li>
 		<li>
-			<a>Resources</a>
+			{@render link("Resources", "/resources", true)}
 			<ul>
 				<li>
-					<a>Discord Server</a>
+					<DiscordIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Discord Server", "/resources#discord")}
 				</li>
 				<li>
-					<a>Texture Packs</a>
+					<PaintRollerIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Texture Packs", "/resources#texture-packs")}
 				</li>
 				<li>
-					<a>Source Code</a>
+					<CodeIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
+					{@render link("Source Code", "/resources#source-code")}
 				</li>
 			</ul>
 		</li>
@@ -73,7 +99,7 @@
 		align-items: center;
 		color: #ddddff;
 		font-weight: bold;
-		background: #0d0548;
+		background: #11111b;
 		width: 100%;
 		padding: 1rem 2rem 1rem 2rem;
 	}
@@ -83,7 +109,16 @@
 		position: sticky;
 		top: 0px;
 		height: 100vh;
-		background-image: linear-gradient(to top, #0d0548, #191969);
+		background-image: linear-gradient(to bottom, #1e1e2e, #11111b);
+		border-right: 2px solid #cdd6f4;;
+		width: fit-content;
+	}
+
+	li:not(:has(li)) {
+		display: flex;
+		gap: 0.5em;
+		align-items: center;
+		line-height: 1.7em;
 	}
 
 	ul ul {
@@ -99,7 +134,7 @@
 	ul:has(ul) {
 		margin-top: 1rem;
 		margin-left: 2rem;
-		margin-right: 2rem;
+		margin-right: 4rem;
 	}
 </style>
 

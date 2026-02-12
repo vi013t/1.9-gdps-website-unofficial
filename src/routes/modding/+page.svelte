@@ -1,9 +1,15 @@
-<script>
+<script lang="ts">
+	import modsButton from "../../assets/images/mods_button.png";
+	import optionsButton from "../../assets/images/options_button.png";
 	import DownloadIcon from '../../components/icons/DownloadIcon.svelte';
 	import GeodeIcon from '../../components/icons/GeodeIcon.svelte';
 	import Link from '../../components/Link.svelte';
 	import Page from '../../components/Page.svelte';
 </script>
+
+{#snippet modLink(name: string, link: string)}
+	<Link style="color: white; font-size: 1.4rem; font-weight: 500;" href={link}>{name}</Link>
+{/snippet}
 
 <Page>
 	<h1>Modding</h1>
@@ -12,6 +18,7 @@
 		<b>Mods</b> allow users to add or change features within the game.
 	</p>
 
+	<div class="section">
 	<h2 id="modding-with-geode">Modding With Geode</h2>
 
 	<p>
@@ -22,13 +29,25 @@
 
 	<p>
 		In Geode, A "mod" is just a file (typically ending in <code>.geode</code>). These mods are written in code (generally C++) by the community and
-		then bundled into a singular <code>.geode</code> file. From there, Geode does the heavy lifting and understands how to interpret these filse and actually
+		then bundled into a singular <code>.geode</code> file. From there, Geode does the heavy lifting and understands how to interpret these files and actually
 		apply the changes to your game.
 	</p>
 
 	<p>All of this is to say, loading a mod in the 1.9 GDPS is as simple as giving Geode the file. Geode already comes with the 1.9 GDPS by default.</p>
 
-	<h2 id="polzhax">PolzHax &amp; PolzEdit</h2>
+	<p>To access Geode for the first time, go to any level and click the settings icon in the upper left:</p>
+
+	<img src={optionsButton} alt="options button" />
+
+	<p>From there, click the Mods button on the bottom:</p>
+
+	<img src={modsButton} alt="mods button" />
+
+	<p>This will take you into Geode.</p>
+</div>
+
+<div class="section">
+	<h2 id="polzhax">PolzHax</h2>
 
 	<p>
 		<Link href="https://github.com/Pololak/PolzHax">PolzHax</Link> is probably the most used and fleshed-out mod currently available for the 1.9 GDPS, made
@@ -40,7 +59,7 @@
 
 	<img src="https://github.com/Pololak/PolzHax/blob/main/image-110.png?raw=true" alt="polzhax" />
 
-	<p>You can download the PolzHax Geode file below:</p>
+	<p>You can download the PolzHax Geode file here:</p>
 
 	<div class="download">
 		<a class="download-button" href="/download/pololak.polzhax.geode" download>
@@ -54,14 +73,16 @@
 		Geode and load it into your game. Using PolzHax is as simple as pressing <code>tab</code> to toggle the overlay, and changing the options you want.
 		Hovering over an option will tell you what it does.
 	</p>
+</div>
 
+<div class="section">
 	<h2 id="other-mods">Other Mods</h2>
 
-	<p>Outside of PolzHax, there exists a few smaller utility mods for the 1.9 GDPS, listed here:</p>
+	<p>Outside of PolzHax and PolzEdit, there exists a few smaller utility mods for the 1.9 GDPS, listed here:</p>
 
 	<div class="other-mods">
 		<div>
-			<a><h4>Audio Offset Calculator</h4></a>
+			{@render modLink("Audio Offset Calculator", "https://github.com/Kingminer7/AudioOffsetCalculator/releases/tag/1.1.4-1.9")}
 
 			Allows easily setting music offsets.
 			<a class="download-button" download>
@@ -71,23 +92,61 @@
 		</div>
 
 		<div>
-			<a><h4>Confirm Exit</h4></a>
+			{@render modLink("Confirm Exit", "https://github.com/solstacoded/confirm_exit_19/releases/latest")}
+			
+			Adds a confirmation screen when exiting a level. Note that PolzHax also comes with this built in.
+
 			<a class="download-button" download>
 				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
 				Download
 			</a>
 		</div>
 		<div>
-			<a class="download-button" download>Hjfod's Backups</a>
+			{@render modLink("Hjfod's Backups", "https://github.com/HJfod/gd-backup")}
+
+			Adds a backup button to back up user data.
+			
+			<a class="download-button" download>
+				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+				Download
+			</a>
 		</div>
+
 		<div>
-			<a class="download-button" download>Startpos Switcher</a> Adds buttons and keybinds to switch between multiple start positions in a level easily.
+			{@render modLink("PolzEditor", "https://github.com/Kingminer7/AudioOffsetCalculator/releases/tag/1.1.4-1.9")}
+
+			Subset of PolzHax with only the editor-related features.
+
+			<a class="download-button" download>
+				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+				Download
+			</a>
+		</div>
+
+		<div>
+			{@render modLink("Startpos Switcher", "https://github.com/capeling/startpos-switcher-1920")}
+
+			Adds buttons and keybinds to switch between multiple start positions in a level easily.
 			Note that PolzHax also comes with a startpos switcher built in.
+
+			<a class="download-button" download>
+				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+				Download
+			</a>
 		</div>
+
 		<div>
-			<a class="download-button" download>Textureldr</a>
+			{@render modLink("Textureldr", "https://github.com/geode-sdk/textureldr")}
+
+			Loads texture packs. Texture packs can locally change the in-game UI elements, objects, and icons.
+
+			<a class="download-button" download>
+				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+				Download
+			</a>
 		</div>
 	</div>
+</div>
 </Page>
 
 <style>
@@ -103,10 +162,11 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;
+		margin-top: 2rem;
 
 		> * {
 			width: 20rem;
-			background: #181825;
+			background: #1e1e2e;
 			border-radius: 1em;
 			color: #ccccff;
 			display: flex;
@@ -114,18 +174,7 @@
 			padding: 1rem;
 			gap: 1rem;
 			border: 2px solid #aaaadd;
-			transition: scale 0.2s;
-			height: 20rem;
-
-			&:hover {
-				scale: 105%;
-			}
-
-			h4 {
-				color: white;
-				font-weight: 500;
-				font-size: 1.2rem;
-			}
+			height: 15rem;
 		}
 
 		.download-button {
@@ -140,7 +189,7 @@
 		width: 15rem;
 		color: black;
 		border-radius: 0.5rem;
-		transition: scale 0.2s;
+		transition: scale 0.1s;
 		box-shadow: 0px 0px 1em black;
 		text-align: center;
 		display: inline-flex;
@@ -150,9 +199,10 @@
 		font-size: 1rem;
 		gap: 0.5em;
 		background-image: linear-gradient(to bottom right, #48f796, #3ddc84);
+		font-weight: 500;
 
 		&:hover {
-			scale: 105%;
+			scale: 108%;
 			text-decoration: none;
 		}
 	}
