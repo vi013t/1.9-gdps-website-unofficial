@@ -5,16 +5,16 @@
 	import Sidebar from './Sidebar.svelte';
 	import VideoBackground from './VideoBackground.svelte';
 
-	let { 
-		children, 
-		nosidebar = false, 
+	let {
+		children,
+		nosidebar = false,
 		next = undefined,
 		previous = undefined
-	}: { 
-		children: Snippet, 
-		nosidebar?: boolean, 
-		next?: { url: string; text: string },
-		previous?: { url: string; text: string }
+	}: {
+		children: Snippet;
+		nosidebar?: boolean;
+		next?: { url: string; text: string };
+		previous?: { url: string; text: string };
 	} = $props();
 
 	let sidebar: Sidebar | null = $state(null);
@@ -55,13 +55,13 @@
 			z-index: 99;
 		}
 
-		@media(min-width: 1900px) {
+		@media (orientation: landscape) {
 			.section {
 				width: 60%;
 			}
 		}
 
-		@media(max-width: 1900px) {
+		@media (orientation: portrait) {
 			.section {
 				width: 100%;
 			}
@@ -94,6 +94,10 @@
 				color: white;
 			}
 
+			:global(b) {
+				color: white;
+			}
+
 			:global(img) {
 				max-width: 100%;
 			}
@@ -106,7 +110,7 @@
 				line-height: 1.5em;
 			}
 
-			:global(.section) {
+			:global(.section, section) {
 				background: linear-gradient(to bottom right, #1e1e2e, #11111b);
 				padding: 2rem;
 				border: 2px solid #ccccff;

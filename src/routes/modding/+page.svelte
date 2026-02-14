@@ -1,6 +1,7 @@
 <script lang="ts">
-	import modsButton from "../../assets/images/mods_button.png";
-	import optionsButton from "../../assets/images/options_button.png";
+	import modsButton from '../../assets/images/mods_button.png';
+	import optionsButton from '../../assets/images/options_button.png';
+	import DiscordIcon from '../../components/icons/DiscordIcon.svelte';
 	import DownloadIcon from '../../components/icons/DownloadIcon.svelte';
 	import GeodeIcon from '../../components/icons/GeodeIcon.svelte';
 	import Link from '../../components/Link.svelte';
@@ -11,8 +12,7 @@
 	<Link style="color: white; font-size: 1.4rem; font-weight: 500;" href={link}>{name}</Link>
 {/snippet}
 
-<Page previous={{ text: "Using the 1.9 GDPS", url: "/use" }} next={{ text: "Resources", url: "/resources" }}>
-
+<Page previous={{ text: 'Using the 1.9 GDPS', url: '/use' }} next={{ text: 'Resources', url: '/resources' }}>
 	<div class="section">
 		<h1>Modding</h1>
 
@@ -22,158 +22,168 @@
 	</div>
 
 	<div class="section">
-	<h2 id="modding-with-geode">Modding With Geode</h2>
+		<h2 id="modding-with-geode">Modding With Geode</h2>
 
-	<p>
-		<Link href="https://geode-sdk.org/">Geode</Link> is a mod loader for Geometry Dash, and is currently the only widely used and supported one that exists.
-		You can think of Geode a bit like a soda machine, where mods are sodas and Geode acts as a container and mixer for them. While Geode is used in modern
-		Geometry Dash 2.2, there also exists a build for 1.9 that's built into the 1.9 GDPS.
-	</p>
+		<p>
+			<Link href="https://geode-sdk.org/">Geode</Link> is a mod loader for Geometry Dash, and is currently the only widely used and supported one that exists.
+			You can think of Geode a bit like a soda machine, where mods are sodas and Geode acts as a container and mixer for them. While Geode is used in modern
+			Geometry Dash 2.2, there also exists a build for 1.9 that's built into the 1.9 GDPS.
+		</p>
 
-	<p>
-		In Geode, A "mod" is just a file (typically ending in <code>.geode</code>). These mods are written in code (generally C++) by the community and
-		then bundled into a singular <code>.geode</code> file. From there, Geode does the heavy lifting and understands how to interpret these files and actually
-		apply the changes to your game.
-	</p>
+		<p>
+			In Geode, A "mod" is just a file (typically ending in <code>.geode</code>). These mods are written in code (generally C++) by the community and
+			then bundled into a singular <code>.geode</code> file. From there, Geode does the heavy lifting and understands how to interpret these files and actually
+			apply the changes to your game.
+		</p>
 
-	<p>All of this is to say, loading a mod in the 1.9 GDPS is as simple as giving Geode the file. Geode already comes with the 1.9 GDPS by default.</p>
+		<p>
+			All of this is to say, loading a mod in the 1.9 GDPS is as simple as giving Geode the file. Geode already comes with the 1.9 GDPS by default.
+		</p>
 
-	<p>To access Geode for the first time, go to any level and click the settings icon in the upper left:</p>
+		<p>To access Geode for the first time, go to any level and click the settings icon in the upper left:</p>
 
-	<img src={optionsButton} alt="options button" />
+		<img src={optionsButton} alt="options button" />
 
-	<p>From there, click the Mods button on the bottom:</p>
+		<p>From there, click the Mods button on the bottom:</p>
 
-	<img src={modsButton} alt="mods button" />
+		<img src={modsButton} alt="mods button" />
 
-	<p>This will take you into Geode.</p>
-</div>
+		<p>This will take you into Geode.</p>
+	</div>
 
-<div class="section">
-	<h2 id="polzhax">PolzHax</h2>
+	<div class="section">
+		<h2 id="polzhax">PolzHax</h2>
 
-	<p>
-		<Link href="https://github.com/Pololak/PolzHax">PolzHax</Link> is probably the most used and fleshed-out mod currently available for the 1.9 GDPS, made
-		by <Link href="https://github.com/Pololak">Pololak</Link>. It's a suite of quality-of-life tools and utilities such as changing the game speed,
-		increasing levels' object limits, bypassing the default frames per second, and more. It's analogous to the famous <Link
-			href="https://absolllute.com/store/mega_hack">Megahack</Link
-		> mod used Geometry Dash 2.2:
-	</p>
+		<p>
+			<Link href="https://github.com/Pololak/PolzHax">PolzHax</Link> is probably the most used and fleshed-out mod currently available for the 1.9 GDPS,
+			made by <Link href="https://github.com/Pololak">Pololak</Link>. It's a suite of quality-of-life tools and utilities such as changing the game
+			speed, increasing levels' object limits, bypassing the default frames per second, and more. It's analogous to the famous <Link
+				href="https://absolllute.com/store/mega_hack">Megahack</Link
+			> mod used Geometry Dash 2.2:
+		</p>
 
-	<img src="https://github.com/Pololak/PolzHax/blob/main/image-110.png?raw=true" alt="polzhax" />
+		<img src="https://github.com/Pololak/PolzHax/blob/main/image-110.png?raw=true" alt="polzhax" />
 
-	<p>You can download the PolzHax Geode file here:</p>
+		<p>You can download the PolzHax Geode file here:</p>
 
-	<div class="download">
-		<a class="download-button" href="/download/pololak.polzhax.geode" download>
-			<GeodeIcon stroke="black" style="width: 1.3em; height: 1.3em;" />
-			PolzHack Geode File
+		<div class="download">
+			<a class="download-button" href="/download/pololak.polzhax.geode" download>
+				<GeodeIcon stroke="black" style="width: 1.3em; height: 1.3em;" />
+				PolzHack Geode File
+			</a>
+		</div>
+
+		<p>
+			Once you have the <code>pololok.polzhax.geode</code> file, follow <Link href="#modding-with-geode">the instructions above</Link> to install it into
+			Geode and load it into your game. Using PolzHax is as simple as pressing <code>tab</code> to toggle the overlay, and changing the options you want.
+			Hovering over an option will tell you what it does.
+		</p>
+
+		<p>PolzHax also has a dedicated discord server, which would be the best place for questions and help relating to the mod. You can join here:</p>
+
+		<a href="https://discord.gg/4h6yHgE4Gj" class="discord" target="_blank" rel="noopener noreferrer">
+			<DiscordIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+			PolzHax Discord
 		</a>
 	</div>
 
-	<p>
-		Once you have the <code>pololok.polzhax.geode</code> file, follow <Link href="#modding-with-geode">the instructions above</Link> to install it into
-		Geode and load it into your game. Using PolzHax is as simple as pressing <code>tab</code> to toggle the overlay, and changing the options you want.
-		Hovering over an option will tell you what it does.
-	</p>
-</div>
+	<div class="section">
+		<h2 id="other-mods">Other Mods</h2>
 
-<div class="section">
-	<h2 id="other-mods">Other Mods</h2>
+		<p>Outside of PolzHax, there exists a few smaller utility mods for the 1.9 GDPS:</p>
 
-	<p>Outside of PolzHax and PolzEdit, there exists a few smaller utility mods for the 1.9 GDPS:</p>
+		<div class="other-mods">
+			<div>
+				{@render modLink('Audio Offset Calculator', 'https://github.com/Kingminer7/AudioOffsetCalculator/releases/tag/1.1.4-1.9')}
 
-	<div class="other-mods">
-		<div>
-			{@render modLink("Audio Offset Calculator", "https://github.com/Kingminer7/AudioOffsetCalculator/releases/tag/1.1.4-1.9")}
+				Allows easily setting music offsets.
+				<a href="/download/km7dev.audio-offset.geode" class="download-button" download>
+					<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+					Download
+				</a>
+			</div>
 
-			Allows easily setting music offsets.
-			<a href="/download/km7dev.audio-offset.geode" class="download-button" download>
-				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
-				Download
-			</a>
-		</div>
+			<div>
+				{@render modLink('Circle Tool', 'https://discord.com/channels/328307969882062848/1399882752068948039/1429787277537579121')}
 
-		<div>
-			{@render modLink("Circle Tool", "https://discord.com/channels/328307969882062848/1399882752068948039/1429787277537579121")}
-			
-			Adds a circle button to the editor that creates easy circles out of objects.
+				Adds a circle button to the editor that creates easy circles out of objects.
 
-			<a href="/download/mat.circle-tool.geode" class="download-button" download>
-				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
-				Download
-			</a>
-		</div>
+				<a href="/download/mat.circle-tool.geode" class="download-button" download>
+					<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+					Download
+				</a>
+			</div>
 
-		<div>
-			{@render modLink("Confirm Exit", "https://github.com/solstacoded/confirm_exit_19/releases/latest")}
-			
-			Adds a confirmation screen when exiting a level. Note that PolzHax also comes with this built in.
+			<div>
+				{@render modLink('Confirm Exit', 'https://github.com/solstacoded/confirm_exit_19/releases/latest')}
 
-			<a href="/download/solstacoded.confirm_exit.geode" class="download-button" download>
-				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
-				Download
-			</a>
-		</div>
-		<div>
-			{@render modLink("Backups", "https://github.com/HJfod/gd-backup")}
+				Adds a confirmation screen when exiting a level. Note that PolzHax also comes with this built in.
 
-			Adds a backup button to back up user data.
-			
-			<a href="/download/hjfod.backups.geode" class="download-button" download>
-				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
-				Download
-			</a>
-		</div>
+				<a href="/download/solstacoded.confirm_exit.geode" class="download-button" download>
+					<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+					Download
+				</a>
+			</div>
+			<div>
+				{@render modLink('Backups', 'https://github.com/HJfod/gd-backup')}
 
-		<div>
-			{@render modLink("PolzEditor", "https://github.com/Pololak/PolzHax")}
+				Adds a backup button to back up user data.
 
-			Subset of PolzHax with only the editor-related features.
+				<a href="/download/hjfod.backups.geode" class="download-button" download>
+					<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+					Download
+				</a>
+			</div>
 
-			<a href="pololak.polzeditor.geode" class="download-button" download>
-				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
-				Download
-			</a>
-		</div>
+			<div>
+				{@render modLink('PolzEditor', 'https://github.com/Pololak/PolzHax')}
 
-		<div>
-			{@render modLink("Quick Volume Controls", "https://github.com/HJfod/volume-scroll-wheel")}
+				Subset of PolzHax with only the editor-related features.
 
-			<p>
-				Adds the ability to hold <code>Alt</code> and scroll to adjust volume. Holding <code>Shift</code> will only adjust SFX volume, and <code>Ctrl</code> will only adjust music volume.
-			</p>
+				<a href="pololak.polzeditor.geode" class="download-button" download>
+					<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+					Download
+				</a>
+			</div>
 
-			<a href="/download/capeling.startpos-switcher-1920.geode" class="download-button" download>
-				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
-				Download
-			</a>
-		</div>
+			<div>
+				{@render modLink('Quick Volume Controls', 'https://github.com/HJfod/volume-scroll-wheel')}
 
-		<div>
-			{@render modLink("Startpos Switcher", "https://github.com/capeling/startpos-switcher-1920")}
+				<p>
+					Adds the ability to hold <code>Alt</code> and scroll to adjust volume. Holding <code>Shift</code> will only adjust SFX volume, and
+					<code>Ctrl</code> will only adjust music volume.
+				</p>
 
-			Adds buttons and keybinds to switch between multiple start positions in a level easily.
-			Note that PolzHax also comes with a startpos switcher built in.
+				<a href="/download/capeling.startpos-switcher-1920.geode" class="download-button" download>
+					<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+					Download
+				</a>
+			</div>
 
-			<a href="/download/capeling.startpos-switcher-1920.geode" class="download-button" download>
-				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
-				Download
-			</a>
-		</div>
+			<div>
+				{@render modLink('Startpos Switcher', 'https://github.com/capeling/startpos-switcher-1920')}
 
-		<div>
-			{@render modLink("Texture Loader", "https://github.com/geode-sdk/textureldr")}
+				Adds buttons and keybinds to switch between multiple start positions in a level easily. Note that PolzHax also comes with a startpos switcher
+				built in.
 
-			Loads texture packs. Texture packs can locally change the in-game UI elements, objects, and icons.
+				<a href="/download/capeling.startpos-switcher-1920.geode" class="download-button" download>
+					<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+					Download
+				</a>
+			</div>
 
-			<a href="/download/geode.texture-loader.geode" class="download-button" download>
-				<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
-				Download
-			</a>
+			<div>
+				{@render modLink('Texture Loader', 'https://github.com/geode-sdk/textureldr')}
+
+				Loads texture packs. Texture packs can locally change the in-game UI elements, objects, and icons.
+
+				<a href="/download/geode.texture-loader.geode" class="download-button" download>
+					<DownloadIcon stroke="black" style="width: 1.25em; height: 1.25em;" />
+					Download
+				</a>
+			</div>
 		</div>
 	</div>
-</div>
 </Page>
 
 <style>
@@ -185,7 +195,7 @@
 		padding: 1rem;
 	}
 
-	@media(max-width: 1900px) {
+	@media (orientation: portrait) {
 		.other-mods {
 			width: 100%;
 			flex-direction: column;
@@ -209,7 +219,7 @@
 			padding: 1rem;
 			gap: 1rem;
 			border: 2px solid #aaaadd;
-			height: 16rem;
+			height: 19rem;
 			box-shadow: 0px 0px 1em black;
 
 			p:is(p) {
@@ -226,7 +236,7 @@
 		}
 	}
 
-	.download-button {
+	a {
 		width: 15rem;
 		color: black;
 		border-radius: 0.5rem;
@@ -246,5 +256,13 @@
 			scale: 108%;
 			text-decoration: none;
 		}
+	}
+
+	.discord {
+		background-image: linear-gradient(to bottom right, #5865f2, #3e48ad);
+		color: white;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1rem;
 	}
 </style>
