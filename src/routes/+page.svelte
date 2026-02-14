@@ -1,6 +1,6 @@
 <script>
-	import Logo from '../components/Logo.svelte';
-	import Navbar from '../components/Navbar.svelte';
+	import Logo from "../components/Logo.svelte";
+	import Navbar from "../components/Navbar.svelte";
 	import VideoBackground from "../components/VideoBackground.svelte";
 </script>
 
@@ -33,17 +33,18 @@
 		h1 {
 			font-weight: bold;
 			font-size: 8rem;
-			font-family: 'Google Sans Flex';
+			font-family: "Google Sans Flex";
 			color: white;
 			text-shadow: 0px 0px 0.1em black;
 		}
 
 		p {
 			font-size: 1.5rem;
-			font-family: 'Google Sans Flex';
+			font-family: "Google Sans Flex";
 			color: white;
 			text-shadow: 0px 0px 0.1em black;
 			margin-top: 1rem;
+			text-align: center;
 		}
 	}
 
