@@ -22,13 +22,13 @@
 	<a href="/demon-list">Demon List</a>
 
 	{#if innerWidth > innerHeight}
-		<div class="no-ai" onmouseenter={() => showAiTooltip = true} onmouseleave={() => showAiTooltip = false}>
+		<div class="no-ai" onmouseenter={() => showAiTooltip = true} onmouseleave={() => showAiTooltip = false} role="tooltip">
 			<RobotIcon stroke="black" style="width: 1.5em; height: 1.5em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" />
 			<NotAllowedIcon stroke="red" style="width: 1.5em; height: 1.5em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" />
 			<Tooltip bind:visible={showAiTooltip}>No AI was used in the making of this website.</Tooltip>
 		</div>
 
-		<div onmouseenter={() => showProgressTooltip = true} onmouseleave={() => showProgressTooltip = false}>
+		<div onmouseenter={() => showProgressTooltip = true} onmouseleave={() => showProgressTooltip = false} role="tooltip">
 			<img src={progressFlag} alt="progress flag"/>
 			<Tooltip bind:visible={showProgressTooltip}>This website supports DEI, LGBTQ+, and trans rights!</Tooltip>
 		</div>

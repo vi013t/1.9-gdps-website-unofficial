@@ -37,7 +37,7 @@
 		{#await demons then demons}
 			{#each demons as demon}
 				<div class="demon">
-					<img src={demon.thumbnail} />
+					<img src={demon.thumbnail} alt={demon.name} />
 					<div class="info">
 						<h2>{demon.name}</h2>
 						<span>Published by <i>{demon.publisher.name}</i></span>
