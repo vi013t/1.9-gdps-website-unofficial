@@ -23,8 +23,11 @@
 
 		<p>
 			<i>Why does this website exist then?</i> To be completely honest, the official 1.9 GDPS website is a bit scattered, and it can be a bit of a puzzle to
-			scrape together information from there. In particular, when it comes to modding, some of the information
-			can only be found in the 1.9 GDPS Discord server and isn't present on the official website. 
+			scrape together information from there. In particular, when it comes to modding, some of the information can only be found in the 1.9 GDPS Discord server and isn't present on the official website. 
+		</p>
+
+		<p>
+			Please do check out <Link href="https://19gdps.com">the official website</Link>.
 		</p>
 	</div>
 

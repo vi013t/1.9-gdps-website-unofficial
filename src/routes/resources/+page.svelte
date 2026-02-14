@@ -13,7 +13,7 @@
 </script>
 
 {#snippet sourceCodeLink(name: string, link: string)}
-	<Link style="color: white; font-size: 1.4rem; font-weight: 500;" href={link}>{name}</Link>
+	<Link style="color: black; font-size: 1.4rem; font-weight: 500;" href={link}>{name}</Link>
 {/snippet}
 
 <Page previous={{ text: 'Modding', url: '/modding' }}>
@@ -317,9 +317,11 @@
 
 		> * {
 			width: 20rem;
-			background: linear-gradient(to bottom right, #1e1e2e, #181825);
+			background: linear-gradient(to bottom right, #f9e2af, #fab387, #eba0ac);
+			outline: 3px solid rgba(255, 255, 255, 70%);
+			outline-offset: -3px;
 			border-radius: 1em;
-			color: #ccccff;
+			color: black;
 			display: flex;
 			flex-direction: column;
 			padding: 1rem;
@@ -335,6 +337,8 @@
 			margin-top: auto;
 			font-size: 0.8rem;
 			background-image: linear-gradient(to bottom right, #444455, #333344);
+			outline: 2px solid rgba(255, 255, 255, 30%);
+			outline-offset: -2px;
 		}
 	}
 

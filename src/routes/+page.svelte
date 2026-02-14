@@ -5,7 +5,7 @@
 </script>
 
 <VideoBackground />
-<Navbar />
+<Navbar sidebar={null} />
 <main>
 	<h1>GDPS</h1>
 	<Logo size="20rem" />
@@ -54,7 +54,7 @@
 		> * {
 			background:
 				linear-gradient(to bottom right, aquamarine, mediumspringgreen) padding-box,
-				linear-gradient(to bottom right, transparent, white) border-box;
+				linear-gradient(to bottom right, aquamarine, white) border-box;
 			border: 2px solid transparent;
 			padding: 1rem;
 			font-size: 1.2rem;

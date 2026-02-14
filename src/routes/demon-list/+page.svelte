@@ -51,6 +51,11 @@
 </Page>
 
 <style>
+	@media(orientation: portrait) {
+		.demon {
+			flex-direction: column;
+		}
+	}
 
 	.demon {
 		display: flex;

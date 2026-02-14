@@ -17,7 +17,7 @@
 </script>
 
 {#snippet modLink(name: string, link: string)}
-	<Link style="color: white; font-size: 1.4rem; font-weight: 500;" href={link}>{name}</Link>
+	<Link style="color: black; font-size: 1.4rem; font-weight: 500;" href={link}>{name}</Link>
 {/snippet}
 
 <Page previous={{ text: 'Using the 1.9 GDPS', url: '/using-the-gdps' }} next={{ text: 'Resources', url: '/resources' }}>
@@ -104,7 +104,7 @@
 		<div class="download">
 			<a class="download-button" href="/download/pololak.polzhax.geode" download>
 				<GeodeIcon stroke="black" style="width: 1.3em; height: 1.3em;" />
-				PolzHack Geode File
+				PolzHax Geode File
 			</a>
 		</div>
 
@@ -220,7 +220,7 @@
 		</div>
 	</section>
 
-	<section>
+	<section class="texture-packs">
 		<h2>Texture Packs</h2>
 
 		<p>
@@ -260,46 +260,96 @@
 
 		<hr/>
 
-		<h3>Ember</h3>
-		<p>By <i>Etzer</i></p>
+		<div>
+			<div>
+				<h3>Ember</h3>
+				<p>By <i>Etzer</i></p>
+			</div>
+			<a href="/download/project_ember.zip" download>
+				<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+				Download
+			</a>
+		</div>
 		<details>
 			<summary>Ember Screenshot</summary>
 			<img src={emberScreenshot} alt="texture pack folder" />
 		</details>
-		<a href="/download/project_ember.zip" download>
-			<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
-			Download
-		</a>
 
 		<hr/>
 
-		<h3>Purpura</h3>
-		<p>By <i>Jeyzor</i></p>
+		<div>
+			<div>
+				<h3>Purpura</h3>
+				<p>By <i>Jeyzor</i></p>
+			</div>
+			<a href="/download/purpura.zip" download>
+				<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+				Download
+			</a>
+		</div>
 		<details>
 			<summary>Purpura Screenshot</summary>
 			<img src={purpuraScreenshot} alt="texture pack folder" />
 		</details>
-		<a href="/download/purpura.zip" download>
-			<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
-			Download
-		</a>
 
 		<hr/>
 
-		<h3>Material</h3>
-		<p>By <i>Jobet</i></p>
+		<div>
+			<div>
+				<h3>Material</h3>
+				<p>By <i>Jobet</i></p>
+			</div>
+			<a href="/download/material.zip" download>
+				<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+				Download
+			</a>
+		</div>
 		<details>
 			<summary>Material Screenshot</summary>
 			<img src={materialScreenshot} alt="texture pack folder" />
 		</details>
-		<a href="/download/material.zip" download>
-			<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
-			Download
-		</a>
 	</section>
 </Page>
 
 <style>
+	.texture-packs > div {
+		display: flex;
+		background: linear-gradient(to bottom right, #f9e2af, #fab387, #eba0ac);
+		padding: 1rem;
+		margin-bottom: 1rem;
+		border-radius: 0.5em;
+		outline: 3px solid rgba(255, 255, 255, 70%);
+		outline-offset: -3px;
+
+		div {
+			display: flex;
+			flex-direction: column;
+		}
+
+		h3 {
+			margin: 0px;
+			color: black;
+		}
+
+		p {
+			margin: 0px;
+			color: black;
+		}
+
+		a {
+			margin: 0px;
+			margin-left: auto;
+			margin-top: 0.5em;
+			color: black;
+			outline: 2px solid rgba(255, 255, 255, 70%);
+			outline-offset: -2px;
+		}
+
+		i {
+			color: black;
+		}
+	}
+
 	.download {
 		display: flex;
 		width: 100%;
@@ -328,20 +378,26 @@
 
 		> * {
 			width: 20rem;
-			background: linear-gradient(to bottom right, #1e1e2e, #11111b);
+			background: linear-gradient(to bottom right, #f9e2af, #fab387, #eba0ac);
 			border-radius: 1em;
-			color: #ccccff;
+			color: black;
 			display: flex;
 			flex-direction: column;
 			padding: 1rem;
 			gap: 1rem;
-			border: 2px solid #aaaadd;
+			outline: 3px solid rgba(255, 255, 255, 70%);
+			outline-offset: -3px;
 			height: 19rem;
 			box-shadow: 0px 0px 1em black;
 
 			p:is(p) {
 				font-size: 1rem;
 				margin-top: 0px;
+				color: black;
+
+				code {
+					background-color: rgba(0, 0, 0, 20%);
+				}
 			}
 		}
 
@@ -350,6 +406,8 @@
 			margin-right: auto;
 			margin-top: auto;
 			font-size: 0.8rem;
+			outline: 2px solid rgba(255, 255, 255, 70%);
+			outline-offset: -2px;
 		}
 	}
 
@@ -377,10 +435,6 @@
 			scale: 108%;
 			text-decoration: none;
 		}
-	}
-
-	h3 ~ a {
-		margin-top: 1.5rem;
 	}
 
 	.discord {

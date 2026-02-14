@@ -2,6 +2,9 @@
 	import downloadButton19 from "../../assets/images/19_download_gmd.png";
 	import uploadButton19 from "../../assets/images/19_upload_gmd.png";
 	import modMenu from "../../assets/images/mod_menu.png";
+	import rateButton from "../../assets/images/rate_button.png";
+	import rateScreen from "../../assets/images/rate_screen.png";
+	import superRating from "../../assets/images/super_rating.png";
 	import Link from '../../components/Link.svelte';
 	import Page from '../../components/Page.svelte';
 </script>
@@ -133,6 +136,49 @@
 			...or through <Link href="https://19gdps.com/gdapi/tools/songAdd.php">the official website</Link> directly.
 		</p>
 	</div>
+
+	<section>
+		<h2 id="level-rates">Level Rates</h2>
+
+		<p>
+			Unlike in the official 2.2 servers where only moderators can send levels for ratings, in the 1.9 GDPS, <i>anyone</i> can send a level to be rated. The <b>star button</b> on the side of any level can be used to rate it:
+		</p>
+
+		<details>
+			<summary>Rate Button</summary>
+			<img src={rateButton} alt="rate button" />
+		</details>
+
+		<p>
+			When rating a level, it will ask you to choose a difficulty and a reason. The reason should explain why you think the level is good enough to be rated:
+		</p>
+
+		<details>
+			<summary>Rate Screen</summary>
+			<img src={rateScreen} alt="rate screen" />
+		</details>
+
+		<p>
+			Standard criteria applies for a level being rate-worthy&mdash;good gameplay, decoration, unique qualities, etc.
+		</p>
+
+		<p>
+			Sent levels will appear in the <Link href="https://discord.com/channels/328307969882062848/1450677167561113651">sends channel</Link> in the 1.9 GDPS Discord. If it gets rated, it will appear in the <Link href="https://discord.com/channels/328307969882062848/354185861740625920">rates channel</Link>.
+		</p>
+
+		<p>
+			There also exists a type of rating unique to the 1.9 GDPS called a <b>super rating</b>. Super rated levels have a special fire glow effect around their difficulty face:
+		</p>
+
+		<details>
+			<summary>Super Rating</summary>
+			<img src={superRating} alt="super rating" />
+		</details>
+
+		<p>
+			Super rated levels are the best of the best, even above featured levels. They're somewhat analogous to the "mythic" levels that appear in the official 2.2 servers.
+		</p>
+	</section>
 </Page>
 
 <style>

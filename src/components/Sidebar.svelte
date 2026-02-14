@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { type Component } from 'svelte';
 	import CheckIcon from './icons/CheckIcon.svelte';
+	import CloseIcon from './icons/CloseIcon.svelte';
 	import CodeIcon from './icons/CodeIcon.svelte';
 	import DiscordIcon from './icons/DiscordIcon.svelte';
 	import DownloadIcon from './icons/DownloadIcon.svelte';
 	import GeodeIcon from './icons/GeodeIcon.svelte';
+	import { type IconProps } from './icons/Icon.svelte';
 	import LightningIcon from './icons/LightningIcon.svelte';
 	import LinkIcon from './icons/LinkIcon.svelte';
 	import ModMenuIcon from './icons/ModMenuIcon.svelte';
@@ -20,108 +23,121 @@
 
 	let innerWidth = $state(0);
 	let innerHeight = $state(0);
+	let mobile = $derived(innerHeight > innerWidth);
 
-	let visible = $derived(innerWidth > innerHeight);
+	let visibleOverride = $state(false);
+	let visible = $derived(visibleOverride || !mobile);
 
 	export function isHidden() {
 		return visible;
 	}
+
+	export function hide() {
+		visibleOverride = false;
+	}
+
+	export function toggle() {
+		visibleOverride = !visibleOverride;
+	}
 </script>
 
-{#snippet link(text: string, href: string, top?: true)}
-	<Link style="color: {top ? 'white' : '#ccccff'}; font-size: 1.2rem;" {href}>{text}</Link>
+{#snippet link(text: string, href: string, Icon?: Component<IconProps>)}
+	{#if Icon}
+		<Icon stroke="#ccccff" style={mobile ? "width: 1.8em; height: 1.8em;" : "width: 1em; height: 1em;"} />
+	{/if}
+	<Link 
+		onclick={() => hide()} 
+		style="color: {Icon ? '#ccccff' : 'white'}; font-size: {mobile? "1.75rem" : "1.2rem"}; line-height: {mobile ? "1.5em" : "1.2em"};" {href}
+	>
+			{text}
+	</Link>
 {/snippet}
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<section style:transform="translateX({visible ? '0%' : '-100%'})" style:position={visible ? 'sticky' : 'fixed'}>
-	<a href="/">
-		<Logo size="3rem" />
-		1.9 GDPS
-	</a>
+<section style:transform="translateX({visible ? '0%' : '-100%'})" style:position={visible && !mobile ? 'sticky' : 'fixed'}>
+
+	{#if mobile}
+		<div class="top">
+			<Logo size="3rem" />
+			1.9 GDPS
+			<button onclick={() => hide()}>
+				<CloseIcon stroke="white" style="width: 2rem; height: 2rem;" />
+			</button>
+		</div>
+	{:else}
+		<a class="top" href="/">
+			<Logo size="3rem" />
+			1.9 GDPS
+		</a>
+	{/if}
 
 	<ul>
 		<li>
-			{@render link('Introduction', '/introduction', true)}
+			{@render link('Introduction', '/introduction')}
 			<ul>
 				<li>
-					<QuestionMarkIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('What is the 1.9 GDPS?', '/introduction#what-is-gdps')}
+					{@render link('What is the 1.9 GDPS?', '/introduction#what-is-gdps', QuestionMarkIcon)}
 				</li>
 				<li>
-					<DownloadIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Installation', '/introduction#installation')}
+					{@render link('Installation', '/introduction#installation', DownloadIcon)}
 				</li>
 				<li>
-					<WrenchIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Troubleshooting', '/introduction#troubleshooting')}
+					{@render link('Troubleshooting', '/introduction#troubleshooting', WrenchIcon)}
 				</li>
 				<li>
-					<RaceIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Getting Started', '/introduction#getting-started')}
+					{@render link('Getting Started', '/introduction#getting-started', RaceIcon)}
 				</li>
 			</ul>
 		</li>
 		<li>
-			{@render link('Using the 1.9 GDPS', '/using-the-gdps', true)}
+			{@render link('Using the 1.9 GDPS', '/using-the-gdps')}
 			<ul>
 				<li>
-					<ModMenuIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('The Mod Menu', '/using-the-gdps#mod-menu')}
+					{@render link('The Mod Menu', '/using-the-gdps#mod-menu', ModMenuIcon)}
 				</li>
 				<li>
-					<TransferIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Transferring Levels', '/using-the-gdps#transferring-levels')}
+					{@render link('Transferring Levels', '/using-the-gdps#transferring-levels', TransferIcon)}
 				</li>
 				<li>
-					<MusicNoteIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Reuploading Songs', '/using-the-gdps#reuplodaing-songs')}
+					{@render link('Reuploading Songs', '/using-the-gdps#reuploading-songs', MusicNoteIcon)}
 				</li>
 				<li>
-					<StarIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Level Rates', '/using-the-gdps#level-rates')}
+					{@render link('Level Rates', '/using-the-gdps#level-rates', StarIcon)}
 				</li>
 			</ul>
 		</li>
 		<li>
-			{@render link('Modding', '/modding', true)}
+			{@render link('Modding', '/modding')}
 			<ul>
 				<li>
-					<GeodeIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Modding With Geode', '/modding#modding-with-geode')}
+					{@render link('Modding With Geode', '/modding#modding-with-geode', GeodeIcon)}
 				</li>
 				<li>
-					<LightningIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('PolzHax', '/modding#polzhax')}
+					{@render link('PolzHax', '/modding#polzhax', LightningIcon)}
 				</li>
 				<li>
-					<PlusIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Other Mods', '/modding#other-mods')}
+					{@render link('Other Mods', '/modding#other-mods', PlusIcon)}
 				</li>
 				<li>
-					<PaintRollerIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Texture Packs', '/modding#texture-packs')}
+					{@render link('Texture Packs', '/modding#texture-packs', PaintRollerIcon)}
 				</li>
 			</ul>
 		</li>
 		<li>
-			{@render link('Resources', '/resources', true)}
+			{@render link('Resources', '/resources')}
 			<ul>
 				<li>
-					<CheckIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Official Website', '/resources#official-website')}
+					{@render link('Official Website', '/resources#official-website', CheckIcon)}
 				</li>
 				<li>
-					<DiscordIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Discord Server', '/resources#discord')}
+					{@render link('Discord Server', '/resources#discord', DiscordIcon)}
 				</li>
 				<li>
-					<CodeIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Source Code', '/resources#source-code')}
+					{@render link('Source Code', '/resources#source-code', CodeIcon)}
 				</li>
 				<li>
-					<LinkIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Other Links', '/resources#other-links')}
+					{@render link('Other Links', '/resources#other-links', LinkIcon)}
 				</li>
 			</ul>
 		</li>
@@ -129,7 +145,26 @@
 </section>
 
 <style>
-	a {
+	@media(orientation: portrait) {
+		section {
+			width: 90vw;
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			z-index: 99999;
+			box-shadow: 0px 0px 2em black;
+		}
+	}
+
+	@media(orientation: landscape) {
+		section {
+			width: fit-content;
+			position: sticky;
+			top: 0px;
+		}
+	}
+
+	.top {
 		display: flex;
 		gap: 1rem;
 		align-items: center;
@@ -140,16 +175,18 @@
 		width: 100%;
 		padding: 1rem 2rem 1rem 2rem;
 		font-size: 2rem;
+
+		button {
+			margin-left: auto;
+		}
 	}
 
 	section {
 		font-size: 1rem;
-		position: sticky;
-		top: 0px;
 		height: 100vh;
 		background-image: linear-gradient(to bottom, #1e1e2e, #11111b);
 		border-right: 2px solid #cdd6f4;
-		width: fit-content;
+		transition: transform 0.1s;
 	}
 
 	li:not(:has(li)) {

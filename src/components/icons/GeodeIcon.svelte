@@ -1,5 +1,7 @@
 <script lang="ts">
-	let { stroke, ...rest } = $props();
+	import type { IconProps } from "./Icon.svelte";
+
+	let { stroke, ...rest }: IconProps = $props();
 </script>
 
 <svg {...rest} width="696" height="698" viewBox="0 0 696 698" xmlns="http://www.w3.org/2000/svg">

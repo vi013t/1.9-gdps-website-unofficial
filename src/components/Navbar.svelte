@@ -1,15 +1,20 @@
-<script>
+<script lang="ts">
 	import progressFlag from "../assets/images/progress_flag.png";
+	import MenuIcon from "./icons/MenuIcon.svelte";
 	import NotAllowedIcon from './icons/NotAllowedIcon.svelte';
 	import RobotIcon from './icons/RobotIcon.svelte';
 	import Logo from './Logo.svelte';
+	import Sidebar from "./Sidebar.svelte";
 	import Tooltip from "./Tooltip.svelte";
+
+	let { sidebar }: { sidebar: Sidebar | null } = $props();
 
 	let showAiTooltip = $state(false);
 	let showProgressTooltip = $state(false);
 
 	let innerWidth = $state(0);
 	let innerHeight = $state(0);
+	let mobile = $derived(innerWidth < innerHeight);
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
@@ -21,7 +26,11 @@
 	<a href="/introduction">Docs</a>
 	<a href="/demon-list">Demon List</a>
 
-	{#if innerWidth > innerHeight}
+	{#if mobile}
+		<button class="toggle-sidebar" onclick={() => sidebar?.toggle()}>
+			<MenuIcon stroke="black" style="width: 2.5rem; height: 2.5rem;" />
+		</button>
+	{:else}
 		<div class="no-ai" onmouseenter={() => showAiTooltip = true} onmouseleave={() => showAiTooltip = false} role="tooltip">
 			<RobotIcon stroke="black" style="width: 1.5em; height: 1.5em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" />
 			<NotAllowedIcon stroke="red" style="width: 1.5em; height: 1.5em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" />
@@ -36,6 +45,18 @@
 </nav>
 
 <style>
+
+	@media(orientation: portrait) {
+		nav {
+			position: sticky;
+			top: 0px;
+		}
+	}
+
+	.toggle-sidebar {
+		margin-left: auto;
+	}
+
 	nav {
 		display: flex;
 		width: 100%;

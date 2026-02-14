@@ -21,7 +21,7 @@
 </script>
 
 <VideoBackground />
-<Navbar />
+<Navbar {sidebar} />
 <main>
 	{#if !nosidebar}
 		<Sidebar bind:this={sidebar} />
