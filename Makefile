@@ -23,7 +23,7 @@ deploy-site:
 	@echo -e "    \e[1;32mDone!\e[0m Website written to \e[1;36m/build\e[0m"
 	@echo -en "    \e[1;32mDeploying\e[0m to GitHub..."
 	@git add . &>cache/build.log
-	@git commit -m "New build deployment" &>cache/build.log
+	@git commit -m '[automatic deploy] new build deployment' &>cache/build.log
 	@git push --no-progress &>cache/build.log
 	@git push origin `git subtree split --prefix build main`:gh-pages --force --no-progress &>cache/build.log
 	@echo -e "\e[1;32mDone!\e[0m"
