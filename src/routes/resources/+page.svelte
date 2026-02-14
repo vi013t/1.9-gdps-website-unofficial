@@ -4,6 +4,8 @@
 	import DiscordIcon from '../../components/icons/DiscordIcon.svelte';
 	import GithubIcon from '../../components/icons/GithubIcon.svelte';
 	import InternetIcon from '../../components/icons/InternetIcon.svelte';
+	import SpotifyIcon from '../../components/icons/SpotifyIcon.svelte';
+	import SteamIcon from '../../components/icons/SteamIcon.svelte';
 	import TwitterIcon from '../../components/icons/TwitterIcon.svelte';
 	import YoutubeIcon from '../../components/icons/YoutubeIcon.svelte';
 	import Link from '../../components/Link.svelte';
@@ -160,6 +162,14 @@
 				<DiscordIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
 				@qimiko
 			</a>
+			<a href="https://steamcommunity.com/profiles/76561198857580624" class="steam" target="_blank" rel="noopener noreferrer">
+				<SteamIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				miko!
+			</a>
+			<a href="https://open.spotify.com/user/jc7p82l93fj59aqe74a85ih6g" class="spotify" target="_blank" rel="noopener noreferrer">
+				<SpotifyIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				chloe
+			</a>
 		</div>
 
 		<hr />
@@ -173,21 +183,46 @@
 			</a>
 		</div>
 
+		<hr />
+
 		<ul>
 			<li>
-				<b>aroo</b> - GDPS Moderator
+				<b><Link href="https://absolllute.com/">Absolute</Link></b> - GDPS Creator
 			</li>
 			<li>
-				<b>Celeste</b> - GDPS Moderator
+				<b><Link href="https://discord.com/users/150040671443484673">Great</Link></b> - GDPS Admin
+			</li>
+		</ul>
+
+		<hr/>
+
+		<ul>
+			<li>
+				<b><Link href="https://discord.com/users/1287889621736361987">Aroo</Link></b> - GDPS Moderator
 			</li>
 			<li>
-				<b>GrenadeOfTacos</b> - GDPS Moderator
+				<b><Link href="https://discord.com/users/293696789008089089">Brighty</Link></b> - GDPS Moderator
 			</li>
 			<li>
-				<b>Jackalope</b> - GDPS Moderator
+				<b><Link href="https://discord.com/users/900131076691853374">Celeste</Link></b> - GDPS Moderator
 			</li>
 			<li>
-				<b>Kz04</b> - GDPS Moderator
+				<b><Link href="https://discord.com/users/294481013562802176">GrenadeOfTacos</Link></b> - GDPS Moderator
+			</li>
+			<li>
+				<b><Link href="https://discord.com/users/473979645214195732">Jackalope</Link></b> - GDPS Moderator
+			</li>
+			<li>
+				<b><Link href="https://discord.com/users/232901003354177546">Kz04</Link></b> - GDPS Moderator
+			</li>
+			<li>
+				<b><Link href="https://discord.com/users/226181342348574720">Manu</Link></b> - GDPS Moderator
+			</li>
+			<li>
+				<b><Link href="https://discord.com/users/562276976564371456">Purple Popcorn</Link></b> - GDPS Moderator
+			</li>
+			<li>
+				<b><Link href="https://discord.com/users/1204103833568157756">YouKnowWho</Link></b> - GDPS Moderator
 			</li>
 		</ul>
 	</section>
@@ -209,8 +244,16 @@
 		background-image: linear-gradient(to bottom right, #444455, #333344);
 	}
 
+	.steam {
+		background-image: linear-gradient(to bottom right, #444455, #333344);
+	}
+
 	.website {
 		background-image: linear-gradient(to bottom right, #ff9e30, #c66a0d);
+	}
+	
+	.spotify {
+		background-image: linear-gradient(to bottom right, #25c95e, #158b3f);
 	}
 
 	.buttons {

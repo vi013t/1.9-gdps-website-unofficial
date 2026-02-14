@@ -134,7 +134,7 @@
 		</details>
 
 		<p>
-			This will take you into the installer. The rest is pretty straightforward; It'll have you pick a location for the app&mdash;if you're not sure, stick with the default. It'll ask if you want to make a desktop shortcut too.
+			This will take you into the installer. The rest is pretty straightforward; It'll have you pick a location for the app&mdash;if you're not sure, stick with the default. It'll ask if you want to make a desktop shortcut too; That one's up to you.
 		</p>
 	</div>
 

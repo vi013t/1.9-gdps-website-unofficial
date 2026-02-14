@@ -1,8 +1,14 @@
 <script lang="ts">
 	import geodeButton from "../../assets/images/geode_button.png";
 	import geodeUploadButton from "../../assets/images/geode_upload.png";
+	import materialScreenshot from "../../assets/images/material.png";
 	import modsButton from '../../assets/images/mods_button.png';
 	import optionsButton from '../../assets/images/options_button.png';
+	import emberScreenshot from "../../assets/images/project_ember.png";
+	import purpuraScreenshot from "../../assets/images/purpura.png";
+	import texturePack from "../../assets/images/texture_pack.jpg";
+	import texturePackFolder from "../../assets/images/texture_pack_folder.png";
+	import BricksIcon from "../../components/icons/BricksIcon.svelte";
 	import DiscordIcon from '../../components/icons/DiscordIcon.svelte';
 	import DownloadIcon from '../../components/icons/DownloadIcon.svelte';
 	import GeodeIcon from '../../components/icons/GeodeIcon.svelte';
@@ -213,6 +219,84 @@
 			</div>
 		</div>
 	</section>
+
+	<section>
+		<h2>Texture Packs</h2>
+
+		<p>
+			<b>Texture packs</b> change the textures of the UI elements of your client. For example, this is a texture pack:
+		</p>
+
+		<details>
+			<summary>Texure Pack</summary>
+			<img src={texturePack} alt="texture pack" />
+		</details>
+
+		<p>
+			Generally speaking, texture packs are not compatible with versions of the game other than the one they were made for; i.e., you need a 1.9 texture pack to apply to the 1.9 game. Texture packs exist as folders of textures, generally compressed to a <code>.zip</code> file. Right click the zip and click <code>Extract all</code> to extract the files into a folder. Texture packs might have a folder in them called <b>Resources</b> where the actual textures are contained, or they could just be in the extracted zip itself. It looks something like this:
+		</p>
+		
+		<details>
+			<summary>Texure Pack Folder</summary>
+			<img src={texturePackFolder} alt="texture pack folder" />
+		</details>
+
+		<p>
+			To apply a texture pack, you need to place these files in your 1.9 GDPS folder. On Windows, press <code>Windows + R</code> and enter <code>%localappdata%</code>. This will open your local AppData folder. From there, navigate to <code>Programs &gt; 1.9 GDPS</code> (or wherever your 1.9 GDPS installation is if you changed it when you installed it; <code>%localappdata% &gt; Programs &gt; 1.9 GDPS</code> is just the default). This is where you copy your textures into. It should ask you if you want to replace files; Click "replace all".
+		</p>
+
+		<p>
+			To remove a texture pack, You can just follow the same steps but with the default textures. The default texture pack can be downloaded here:
+		</p>
+
+		<a href="/download/default_texture_pack.zip" download>
+			<BricksIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+			Default Texture Pack
+		</a>
+
+		<p>
+			Below are texture packs made for the 1.9 build of the game.
+		</p>
+
+		<hr/>
+
+		<h3>Ember</h3>
+		<p>By <i>Etzer</i></p>
+		<details>
+			<summary>Ember Screenshot</summary>
+			<img src={emberScreenshot} alt="texture pack folder" />
+		</details>
+		<a href="/download/project_ember.zip" download>
+			<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+			Download
+		</a>
+
+		<hr/>
+
+		<h3>Purpura</h3>
+		<p>By <i>Jeyzor</i></p>
+		<details>
+			<summary>Purpura Screenshot</summary>
+			<img src={purpuraScreenshot} alt="texture pack folder" />
+		</details>
+		<a href="/download/purpura.zip" download>
+			<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+			Download
+		</a>
+
+		<hr/>
+
+		<h3>Material</h3>
+		<p>By <i>Jobet</i></p>
+		<details>
+			<summary>Material Screenshot</summary>
+			<img src={materialScreenshot} alt="texture pack folder" />
+		</details>
+		<a href="/download/material.zip" download>
+			<DownloadIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+			Download
+		</a>
+	</section>
 </Page>
 
 <style>
@@ -230,6 +314,10 @@
 			flex-direction: column;
 			align-items: center;
 		}
+	}
+
+	h3 + p:not(#a) {
+		margin-top: 0px;
 	}
 
 	.other-mods {
@@ -280,11 +368,19 @@
 		gap: 0.5em;
 		background-image: linear-gradient(to bottom right, #61ffa8, #30bc6f);
 		font-weight: 500;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 
 		&:hover {
 			scale: 108%;
 			text-decoration: none;
 		}
+	}
+
+	h3 ~ a {
+		margin-top: 1.5rem;
 	}
 
 	.discord {

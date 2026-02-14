@@ -1,0 +1,5 @@
+<script lang="ts">
+	let { stroke, ...rest } = $props();
+</script>
+
+<svg {...rest} version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill={stroke}><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} </style> <g> <path d="M15,10V3H4C3.4,3,3,3.4,3,4v6h7H15z"></path> <path d="M22,10h7V4c0-0.6-0.4-1-1-1H17v7H22z"></path> <polygon points="11,12 11,20 16,20 21,20 21,12 16,12 "></polygon> <rect x="3" y="12" width="6" height="8"></rect> <rect x="23" y="12" width="6" height="8"></rect> <path d="M10,22H3v6c0,0.6,0.4,1,1,1h11v-7H10z"></path> <path d="M17,22v7h11c0.6,0,1-0.4,1-1v-6h-7H17z"></path> </g> </g></svg>

@@ -20,7 +20,6 @@
 	</a>
 	<a href="/introduction">Docs</a>
 	<a href="/demon-list">Demon List</a>
-	<a>FAQ</a>
 
 	{#if innerWidth > innerHeight}
 		<div class="no-ai" onmouseenter={() => showAiTooltip = true} onmouseleave={() => showAiTooltip = false}>

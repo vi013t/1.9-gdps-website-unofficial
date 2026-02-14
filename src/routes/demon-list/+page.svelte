@@ -1,5 +1,4 @@
 <script lang="ts">
-	import top1Background from "../../assets/images/top_1_background.png";
 	import Link from "../../components/Link.svelte";
 	import Page from "../../components/Page.svelte";
 
@@ -34,8 +33,6 @@
 		</p>
 	</div>
 
-	<img class="top-1" src={top1Background} />
-
 	<div class="demons">
 		{#await demons then demons}
 			{#each demons as demon}
@@ -54,13 +51,6 @@
 </Page>
 
 <style>
-	.top-1 {
-		position: absolute;
-		width: 60%;
-		left: 50%;
-		top: 8rem;
-		transform: translateX(-50%);
-	}
 
 	.demon {
 		display: flex;
@@ -73,18 +63,6 @@
 
 		span:not(.ranking) {
 			color: #ccccff;
-		}
-
-		&:first-child {
-			background-color: transparent;
-			outline: none;
-			margin-bottom: 20rem;
-			width: 77%;
-			margin-left: 8rem;
-
-			* {
-				text-shadow: 0px 0px 1em black;
-			}
 		}
 
 		img {
