@@ -5,7 +5,10 @@ const config = {
 	kit: {
 		adapter: adapter({
 			fallback: '200.html'
-		})
+		}),
+		paths: {
+			base: process.env.NODE_ENV === "production" ? "/1.9-gdps-website-unofficial" : ""
+		}
 	}
 };
 
