@@ -1,4 +1,6 @@
 <script lang="ts">
+	import geodeButton from "../../assets/images/geode_button.png";
+	import geodeUploadButton from "../../assets/images/geode_upload.png";
 	import modsButton from '../../assets/images/mods_button.png';
 	import optionsButton from '../../assets/images/options_button.png';
 	import DiscordIcon from '../../components/icons/DiscordIcon.svelte';
@@ -12,16 +14,16 @@
 	<Link style="color: white; font-size: 1.4rem; font-weight: 500;" href={link}>{name}</Link>
 {/snippet}
 
-<Page previous={{ text: 'Using the 1.9 GDPS', url: '/use' }} next={{ text: 'Resources', url: '/resources' }}>
-	<div class="section">
+<Page previous={{ text: 'Using the 1.9 GDPS', url: '/using-the-gdps' }} next={{ text: 'Resources', url: '/resources' }}>
+	<section>
 		<h1>Modding</h1>
 
 		<p>
 			<b>Mods</b> allow users to add or change features within the game.
 		</p>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="modding-with-geode">Modding With Geode</h2>
 
 		<p>
@@ -42,16 +44,40 @@
 
 		<p>To access Geode for the first time, go to any level and click the settings icon in the upper left:</p>
 
-		<img src={optionsButton} alt="options button" />
+		<details>
+			<summary>Options Button</summary>
+			<img src={optionsButton} alt="options button" />
+		</details>
 
 		<p>From there, click the Mods button on the bottom:</p>
 
-		<img src={modsButton} alt="mods button" />
+		<details>
+			<summary>Mods Button</summary>
+			<img src={modsButton} alt="mods button" />
+		</details>
 
-		<p>This will take you into Geode.</p>
-	</div>
+		<p>This will take you into Geode. Once you've done this once, the Geode button will be permanently added to your main menu:</p>
 
-	<div class="section">
+		<details>
+			<summary>Geode Button</summary>
+			<img src={geodeButton} alt="geode button" />
+		</details>
+
+		<p>
+			From Geode, use the upload button to upload a Geode file:
+		</p>
+
+		<details>
+			<summary>Upload Button</summary>
+			<img src={geodeUploadButton} alt="geode upload button" />
+		</details>
+			
+		<p>
+			This will add the mod to Geode, and you can delete the original file if you'd like. You will need to restart your game to be able to use the mod.
+		</p>
+	</section>
+
+	<section>
 		<h2 id="polzhax">PolzHax</h2>
 
 		<p>
@@ -62,7 +88,10 @@
 			> mod used Geometry Dash 2.2:
 		</p>
 
-		<img src="https://github.com/Pololak/PolzHax/blob/main/image-110.png?raw=true" alt="polzhax" />
+		<details>
+			<summary>PolzHax</summary>
+			<img src="https://github.com/Pololak/PolzHax/blob/main/image-110.png?raw=true" alt="polzhax" />
+		</details>
 
 		<p>You can download the PolzHax Geode file here:</p>
 
@@ -85,9 +114,9 @@
 			<DiscordIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
 			PolzHax Discord
 		</a>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="other-mods">Other Mods</h2>
 
 		<p>Outside of PolzHax, there exists a few smaller utility mods for the 1.9 GDPS:</p>
@@ -183,7 +212,7 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</section>
 </Page>
 
 <style>
@@ -211,7 +240,7 @@
 
 		> * {
 			width: 20rem;
-			background: #1e1e2e;
+			background: linear-gradient(to bottom right, #1e1e2e, #11111b);
 			border-radius: 1em;
 			color: #ccccff;
 			display: flex;
@@ -249,7 +278,7 @@
 		height: 3em;
 		font-size: 1rem;
 		gap: 0.5em;
-		background-image: linear-gradient(to bottom right, #48f796, #3ddc84);
+		background-image: linear-gradient(to bottom right, #61ffa8, #30bc6f);
 		font-weight: 500;
 
 		&:hover {

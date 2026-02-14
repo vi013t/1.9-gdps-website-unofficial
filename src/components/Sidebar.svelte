@@ -63,23 +63,23 @@
 			</ul>
 		</li>
 		<li>
-			{@render link('Using the 1.9 GDPS', '/use', true)}
+			{@render link('Using the 1.9 GDPS', '/using-the-gdps', true)}
 			<ul>
 				<li>
 					<ModMenuIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('The Mod Menu', '/use#mod-menu')}
+					{@render link('The Mod Menu', '/using-the-gdps#mod-menu')}
 				</li>
 				<li>
 					<TransferIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Transferring Levels', '/use#transferring-levels')}
+					{@render link('Transferring Levels', '/using-the-gdps#transferring-levels')}
 				</li>
 				<li>
 					<MusicNoteIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Reuploading Songs', '/use#reuplodaing-songs')}
+					{@render link('Reuploading Songs', '/using-the-gdps#reuplodaing-songs')}
 				</li>
 				<li>
 					<StarIcon stroke="#ccccff" style="width: 1em; height: 1em;" />
-					{@render link('Level Rates', '/use#level-rates')}
+					{@render link('Level Rates', '/using-the-gdps#level-rates')}
 				</li>
 			</ul>
 		</li>
@@ -150,7 +150,6 @@
 		background-image: linear-gradient(to bottom, #1e1e2e, #11111b);
 		border-right: 2px solid #cdd6f4;
 		width: fit-content;
-		box-shadow: 0px 0px 1em black;
 	}
 
 	li:not(:has(li)) {

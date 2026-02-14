@@ -92,6 +92,15 @@
 				font-size: 2rem;
 				font-weight: 500;
 				color: white;
+				scroll-margin-top: 2em;
+			}
+
+			:global(h3) {
+				font-size: 1.5rem;
+				font-weight: 500;
+				color: white;
+				margin-bottom: 1rem;
+				margin-top: 1rem;
 			}
 
 			:global(b) {
@@ -108,6 +117,36 @@
 				font-size: 1.25rem;
 				color: #ccccff;
 				line-height: 1.5em;
+			}
+
+			:global(hr) {
+				width: 100%;
+				height: 2px;
+				background-color: #4e4e6e;
+				margin-bottom: 1rem;
+				margin-top: 1rem;
+			}
+
+			:global(summary) {
+				color: white;
+				font-size: 1.25rem;
+				cursor: pointer;
+			}
+
+			:global(details > *:nth-child(2)) {
+				margin-top: 1rem;
+			}
+
+			:global(details) {
+				background-color: #313244;
+				padding: 1rem;
+				border-radius: 0.5em;
+
+				:global(img) {
+					border: 2px solid #cdd6f4;
+					border-radius: 0.5em;
+					box-shadow: 0px 0px 0.5em black;
+				}
 			}
 
 			:global(.section, section) {

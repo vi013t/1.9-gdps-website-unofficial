@@ -2,6 +2,8 @@
 	import BlueskyIcon from '../../components/icons/BlueskyIcon.svelte';
 	import CodeIcon from '../../components/icons/CodeIcon.svelte';
 	import DiscordIcon from '../../components/icons/DiscordIcon.svelte';
+	import GithubIcon from '../../components/icons/GithubIcon.svelte';
+	import InternetIcon from '../../components/icons/InternetIcon.svelte';
 	import TwitterIcon from '../../components/icons/TwitterIcon.svelte';
 	import YoutubeIcon from '../../components/icons/YoutubeIcon.svelte';
 	import Link from '../../components/Link.svelte';
@@ -13,26 +15,26 @@
 {/snippet}
 
 <Page previous={{ text: 'Modding', url: '/modding' }}>
-	<div class="section">
+	<section>
 		<h1>Resources</h1>
 
 		<p>
 			The 1.9 GDPS is a relatively smaller project compared to the official 2.2 version of the game, so it can be hard to find support and resources
 			relating to it. Here I've compiled a bunch of useful links and community resources for your 1.9 GDPS needs.
 		</p>
-	</div>
+	</section>
 
-	<div class="section">
-		<h2>Official Website</h2>
+	<section>
+		<h2 id="official-website">Official Website</h2>
 
 		<p>
 			First and foremost, consider checking out <Link href="https://19gdps.com">the official 1.9 GDPS website</Link>. There's a lot of useful tools
 			and pages, and any information provided there is provided by official GDPS staff members (as far as I know), and therefore it's the most likely
 			place to contain the best and most accurate information on the 1.9 GDPS.
 		</p>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="discord">Discord Server</h2>
 
 		<p>
@@ -50,9 +52,9 @@
 				href="https://discord.com/channels/328307969882062848/1399882752068948039">this link</Link
 			> to access it and add it to your channel list.
 		</p>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="source-code">Source Code</h2>
 
 		<p>If you're interested in the source code for various 1.9 GDPS related things, some relevant ones are accesible here:</p>
@@ -99,10 +101,10 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="section">
-		<h2>Other Links</h2>
+	<section>
+		<h2 id="other-links">Other Links</h2>
 
 		<p>Here are some other miscellaneous links relating to the 1.9 GDPS:</p>
 
@@ -119,21 +121,84 @@
 				<BlueskyIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
 				1.9 GDPS BlueSky
 			</a>
+			<a href="https://discord.gg/4h6yHgE4Gj" class="discord" target="_blank" rel="noopener noreferrer">
+				<DiscordIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				PolzHax Discord
+			</a>
 		</div>
-	</div>
+
+		<p>
+			Please please <i>please</i> support the official 1.9 GDPS staff. They are the most awesomesauce people ever! Some of their info is here:
+		</p>
+
+		<hr />
+
+		<h3>Qimiko <span class="pronouns">(she/they)</span> - GDPS 1.9 Owner</h3>
+
+		<div class="buttons">
+			<a href="https://xyze.dev/" class="website" target="_blank" rel="noopener noreferrer">
+				<InternetIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				xyze.dev
+			</a>
+			<a href="https://github.com/qimiko" class="github" target="_blank" rel="noopener noreferrer">
+				<GithubIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				@qimiko	
+			</a>
+			<a href="https://bsky.app/profile/did:plc:keisthfwxrsqy7hjyr4augjc" class="bluesky" target="_blank" rel="noopener noreferrer">
+				<BlueskyIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				@xyze.dev
+			</a>
+			<a href="https://twitter.com/i/user/3085762589" class="twitter" target="_blank" rel="noopener noreferrer">
+				<TwitterIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				@qvxmiko
+			</a>
+			<a href="https://www.youtube.com/channel/UC7Gq7E3J7ZOb9AjMV1qHBdg" class="youtube" target="_blank" rel="noopener noreferrer">
+				<YoutubeIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				@qjivxn
+			</a>
+			<a href="" class="discord" target="_blank" rel="noopener noreferrer">
+				<DiscordIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				@qimiko	
+			</a>
+		</div>
+
+		<hr />
+
+		<h3>Sam - GDPS 1.9 Owner</h3>
+
+		<div>
+
+		</div>
+	</section>
 </Page>
 
 <style>
+	.pronouns {
+		color: #7e7e9e;
+		font-style: italic;
+		margin-right: 0.2em;
+	}
+
 	.bluesky {
 		background-color: #1185fe;
 		color: white;
 	}
 
+	.github {
+		background-image: linear-gradient(to bottom right, #444455, #333344);
+	}
+	
+	.website {
+		background-image: linear-gradient(to bottom right, #ff9e30, #c66a0d);
+	}
+
 	.buttons {
 		display: flex;
-		gap: 4rem;
+		gap: 2rem 3rem;
 		justify-content: center;
 		margin-top: 1rem;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
 
 		> * {
 			margin: 0px;
@@ -168,6 +233,7 @@
 		margin-right: auto;
 		margin-bottom: 1rem;
 		margin-top: 1rem;
+		flex-shrink: 0;
 
 		&:hover {
 			scale: 108%;

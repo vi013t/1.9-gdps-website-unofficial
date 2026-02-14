@@ -19,7 +19,7 @@
 		background-color: #1e1e2e;
 		color: #cdd6f4;
 		border: 1px solid #555566;
-		font-size: 0.8rem;
+		font-size: 1rem;
 		padding: 1em;
 		border-radius: 0.5em;
 		width: 10em;

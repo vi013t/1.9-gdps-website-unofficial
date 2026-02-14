@@ -1,15 +1,16 @@
 <script>
+	import windowsMoreInfo from '../../assets/images/windows_more_info.png';
+	import windowsRunAnyway from '../../assets/images/windows_run_anyway.png';
+	import windowsWarning from '../../assets/images/windows_warning.png';
 	import AndroidIcon from '../../components/icons/AndroidIcon.svelte';
+	import VisualStudioIcon from '../../components/icons/VisualStudioIcon.svelte';
 	import WindowsIcon from '../../components/icons/WindowsIcon.svelte';
 	import ZipIcon from '../../components/icons/ZipIcon.svelte';
 	import Link from '../../components/Link.svelte';
 	import Page from '../../components/Page.svelte';
-	import windowsWarning from '../../assets/images/windows_warning.png';
-	import windowsRunAnyway from '../../assets/images/windows_run_anyway.png';
-	import VisualStudioIcon from '../../components/icons/VisualStudioIcon.svelte';
 </script>
 
-<Page next={{ text: 'Using the 1.9 GDPS', url: '/use' }}>
+<Page next={{ text: 'Using the 1.9 GDPS', url: '/using-the-gdps' }}>
 	<div class="section">
 		<h1>Introduction</h1>
 
@@ -21,10 +22,9 @@
 		</p>
 
 		<p>
-			<i>Why does this website exist then?</i> To be completely honest, the official 1.9 GDPS website sort of sucks, and it can be a bit of a puzzle to
-			scrape together information on the project from there. In particular, when it comes to modding and things of that nature, some of the information
-			can only be found in the 1.9 GDPS Discord server and isn't present on the official website. This page is meant to be a one-stop shop for all of your
-			1.9 GDPS needs.
+			<i>Why does this website exist then?</i> To be completely honest, the official 1.9 GDPS website is a bit scattered, and it can be a bit of a puzzle to
+			scrape together information from there. In particular, when it comes to modding, some of the information
+			can only be found in the 1.9 GDPS Discord server and isn't present on the official website. 
 		</p>
 	</div>
 
@@ -80,19 +80,19 @@
 		</p>
 
 		<div class="buttons">
-			<a href="/download/vcredist_2010_x86" download class="visual-studio">
+			<a href="/download/vcredist_2010_x86.exe" download class="visual-studio">
 				<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
 				2010 x86 Redistributables
 			</a>
-			<a href="/download/vcredist_2010_x64" download class="visual-studio">
+			<a href="/download/vcredist_2010_x64.exe" download class="visual-studio">
 				<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
 				2010 x64 Redistributables
 			</a>
-			<a href="/download/vcredist_2013_x86" download class="visual-studio">
+			<a href="/download/vcredist_2013_x86.exe" download class="visual-studio">
 				<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
 				2013 x86 Redistributables
 			</a>
-			<a href="/download/vcredist_2013_x64" download class="visual-studio">
+			<a href="/download/vcredist_2013_x64.exe" download class="visual-studio">
 				<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
 				2013 x64 Redistributables
 			</a>
@@ -108,30 +108,49 @@
 
 		<p>When installing the 1.9 GDPS, Windows may warn you that the file is from an unverified publisher and may be malicious:</p>
 
-		<img src={windowsWarning} alt="windows warning" />
+		<details>
+			<summary>Windows Warning</summary>
+			<img src={windowsWarning} alt="windows warning" />
+		</details>
 
 		<p>
 			Scary! Don't worry, the 1.9 GDPS is totally safe. If you have security concerns, you can view <Link href="/resources#source-codes"
 				>the source code for the project</Link
-			> and verify for yourself that its safe. To proceed with the installation, click "More Info" and then "Run anyway":
+			> and verify for yourself that it's safe. To proceed with the installation, click "More Info":
+		</p>
+			
+		<details>
+			<summary>More Info</summary>
+			<img src={windowsMoreInfo} alt="windows more info" />
+		</details>
+
+		<p>
+			and then click "Run anyway":
 		</p>
 
-		<img src={windowsRunAnyway} alt="windows run anyway" />
+		<details>
+			<summary>Run Anyway</summary>
+			<img src={windowsRunAnyway} alt="windows run anyway" />
+		</details>
+
+		<p>
+			This will take you into the installer. The rest is pretty straightforward; It'll have you pick a location for the app&mdash;if you're not sure, stick with the default. It'll ask if you want to make a desktop shortcut too.
+		</p>
 	</div>
 
 	<section>
-		<h2>Troubleshooting</h2>
+		<h2 id="troubleshooting">Troubleshooting</h2>
 
 		<p>You might run into some issues during installation. Don't worry, we'll work through it.</p>
 
 		<p>
-			<b>MSVCP120.dll was not found</b> - This error means that there's an issue with your <b>2013</b> Visual Studio C++ Redistributables. Ensure you
+			<b>MSVCP100.dll was not found</b> - This error means that there's an issue with your <b>2010</b> Visual Studio C++ Redistributables. Ensure you
 			have <b>both the x86 and x64</b> versions installed. You can rerun the redistributable installers and click "repair" to ensure all of the files are
 			installed correcty.
 		</p>
 
 		<p>
-			<b>MSVCP100.dll was not found</b> - This error means that there's an issue with your <b>2010</b> Visual Studio C++ Redistributables. Ensure you
+			<b>MSVCP120.dll was not found</b> - This error means that there's an issue with your <b>2013</b> Visual Studio C++ Redistributables. Ensure you
 			have <b>both the x86 and x64</b> versions installed. You can rerun the redistributable installers and click "repair" to ensure all of the files are
 			installed correcty.
 		</p>
@@ -147,7 +166,16 @@
 
 		<p>
 			The 1.9 GDPS is a standalone application, not something that runs within your regular Geometry Dash installation. If you installed it correctly,
-			you should be able to start it as a regular application.
+			you should be able to start it as a regular application. You're going to want to make an account too. You can do that here:
+		</p>
+
+		<details>
+			<summary>Create Account</summary>
+			<iframe title="Register Account" src="https://19gdps.com/gdapi/tools/account/registerAccount.php"></iframe>
+		</details>
+
+		<p>
+			...or through <Link href="https://19gdps.com/gdapi/tools/account/registerAccount.php">the official website</Link> directly. You can then log into that account in the 1.9 game client.
 		</p>
 	</section>
 </Page>
@@ -157,6 +185,13 @@
 		.buttons {
 			flex-direction: column;
 		}
+	}
+
+	iframe {
+		height: 35rem;
+		border-radius: 0.5em;
+		width: 100%;
+		border: 2px solid #cdd6f4;
 	}
 
 	a {

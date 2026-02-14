@@ -60,9 +60,12 @@
 			border-radius: 0.5rem;
 			box-shadow: 0px 0px 1em black;
 			transition: scale 0.2s;
-			width: 10rem;
+			width: 15rem;
 			font-weight: 400;
 			color: black;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
 			&:hover {
 				scale: 108%;
