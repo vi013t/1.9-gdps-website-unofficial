@@ -142,7 +142,7 @@
 			</a>
 			<a href="https://github.com/qimiko" class="github" target="_blank" rel="noopener noreferrer">
 				<GithubIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
-				@qimiko	
+				@qimiko
 			</a>
 			<a href="https://bsky.app/profile/did:plc:keisthfwxrsqy7hjyr4augjc" class="bluesky" target="_blank" rel="noopener noreferrer">
 				<BlueskyIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
@@ -156,9 +156,9 @@
 				<YoutubeIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
 				@qjivxn
 			</a>
-			<a href="" class="discord" target="_blank" rel="noopener noreferrer">
+			<a href="https://discord.com/users/100711360979034112" class="discord" target="_blank" rel="noopener noreferrer">
 				<DiscordIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
-				@qimiko	
+				@qimiko
 			</a>
 		</div>
 
@@ -166,9 +166,30 @@
 
 		<h3>Sam - GDPS 1.9 Owner</h3>
 
-		<div>
-
+		<div class="buttons">
+			<a href="https://discord.com/users/213411781303861250" class="discord" target="_blank" rel="noopener noreferrer">
+				<DiscordIcon stroke="white" style="width: 1.5em; height: 1.5em;" />
+				@hsam
+			</a>
 		</div>
+
+		<ul>
+			<li>
+				<b>aroo</b> - GDPS Moderator
+			</li>
+			<li>
+				<b>Celeste</b> - GDPS Moderator
+			</li>
+			<li>
+				<b>GrenadeOfTacos</b> - GDPS Moderator
+			</li>
+			<li>
+				<b>Jackalope</b> - GDPS Moderator
+			</li>
+			<li>
+				<b>Kz04</b> - GDPS Moderator
+			</li>
+		</ul>
 	</section>
 </Page>
 
@@ -187,7 +208,7 @@
 	.github {
 		background-image: linear-gradient(to bottom right, #444455, #333344);
 	}
-	
+
 	.website {
 		background-image: linear-gradient(to bottom right, #ff9e30, #c66a0d);
 	}

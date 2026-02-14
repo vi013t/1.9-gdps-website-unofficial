@@ -138,7 +138,7 @@
 			}
 
 			:global(details) {
-				background-color: #313244;
+				background-color: #313255;
 				padding: 1rem;
 				border-radius: 0.5em;
 
