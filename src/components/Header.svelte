@@ -29,7 +29,7 @@
 	}
 </script>
 
-<svelte:element class="heading" this={element} {...attributes}>
+<svelte:element class="heading" this={element} {...attributes} {id}>
 	{@render children()}
 	<button onclick={copy}>
 		<Icon stroke="#666688" style="width: 2rem; height: 2rem;" />
