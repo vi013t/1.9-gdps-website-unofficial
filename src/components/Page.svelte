@@ -169,7 +169,8 @@
 				flex-direction: column;
 				box-shadow: 0px 0px 1rem black;
 				overflow: hidden;
-				transition: height 0.2s;
+				max-height: 400rem;
+				transition: max-height 0.2s;
 			}
 			
 			:global(details + details) {

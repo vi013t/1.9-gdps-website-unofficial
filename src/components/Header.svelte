@@ -14,7 +14,7 @@
 
 	function toggleOpen(event: MouseEvent) {
 		let parent = (event.target as HTMLElement).parentElement!.parentElement!;
-		parent.style.height = open ? parent.previousElementSibling ? "6.1rem" : "7.25rem" : "fit-content";
+		parent.style.maxHeight = open ? parent.previousElementSibling ? "6.1rem" : "7.25rem" : "400rem";
 		open = !open;
 	}
 
