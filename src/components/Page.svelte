@@ -159,7 +159,7 @@
 				}
 			}
 
-			:global(.section, section) {
+			:global(section) {
 				background: linear-gradient(to bottom right, #1e1e2e, #11111b);
 				padding: 2rem;
 				border: 2px solid #ccccff;
@@ -168,6 +168,8 @@
 				display: flex;
 				flex-direction: column;
 				box-shadow: 0px 0px 1rem black;
+				overflow: hidden;
+				transition: height 0.2s;
 			}
 			
 			:global(details + details) {

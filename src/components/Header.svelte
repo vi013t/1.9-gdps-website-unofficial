@@ -10,6 +10,14 @@
 
 	let Icon = $state(LinkIcon);
 
+	let open = $state(true);
+
+	function toggleOpen(event: MouseEvent) {
+		let parent = (event.target as HTMLElement).parentElement!.parentElement!;
+		parent.style.height = open ? parent.previousElementSibling ? "6.1rem" : "7.25rem" : "fit-content";
+		open = !open;
+	}
+
 	function copy() {
 		navigator.clipboard.writeText(`${window.location.href}#${id}`);
 		isOnCooldown = true;
@@ -26,6 +34,7 @@
 	<button onclick={copy}>
 		<Icon stroke="#666688" style="width: 2rem; height: 2rem;" />
 	</button>
+	<button title="toggle collapse" style:--rotation={open ? "0deg" : "-90deg"} onclick={toggleOpen}></button>
 </svelte:element>
 
 <style>
@@ -33,5 +42,18 @@
 		display: flex;
 		align-items: center;
 		gap: 1rem;
+	}
+
+	button:last-child {
+		width: 0.75rem;
+		height: 0.75rem;
+		border-left: 0.75rem solid transparent;
+		border-right: 0.75rem solid transparent;
+		border-bottom: 0.75rem solid transparent;
+		border-top: 0.75rem solid #ccccff;
+		transform-origin: 50% 0%;
+		transform: translateY(40%) rotate(var(--rotation));
+		transition: transform 0.1s;
+		margin-left: auto;
 	}
 </style>
