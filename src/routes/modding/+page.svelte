@@ -62,7 +62,7 @@
 			<img src={modsButton} alt="mods button" />
 		</details>
 
-		<p>This will take you into Geode. Once you've done this once, the Geode button will be permanently added to your main menu:</p>
+		<p>This will take you into Geode. Once you've installed your first mod, the Geode button will be permanently added to your main menu:</p>
 
 		<details>
 			<summary>Geode Button</summary>

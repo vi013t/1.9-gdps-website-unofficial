@@ -10,16 +10,16 @@
 </script>
 
 <Page previous={{ text: 'Introduction', url: '/introduction' }} next={{ text: 'Modding', url: '/modding' }}>
-	<div class="section">
+	<section>
 		<h1>Using the 1.9 GDPS</h1>
 
 		<p>
 			For the most part, assuming you play Geometry Dash, navigating the 1.9 GDPS will be incredibly intuitive&mdash;there are just a few extra features
 			worth being aware of.
 		</p>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="mod-menu">The Mod Menu</h2>
 
 		<p>
@@ -42,9 +42,9 @@
 				href="/modding#polzhax">the PolzHax info</Link
 			> for more information and installation instructions.
 		</p>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="transferring-levels">Transferring Levels</h2>
 
 		<p>
@@ -118,9 +118,9 @@
 			<summary>Upload a GMD file to the 1.9 GDPS</summary>
 			<img src={uploadButton19} alt="1.9 download GMD button" />
 		</details>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="reuploading-songs">Reuploading Songs</h2>
 
 		<p>
@@ -135,7 +135,7 @@
 		<p>
 			...or through <Link href="https://19gdps.com/gdapi/tools/songAdd.php">the official website</Link> directly.
 		</p>
-	</div>
+	</section>
 
 	<section>
 		<h2 id="level-rates">Level Rates</h2>

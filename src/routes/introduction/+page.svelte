@@ -12,7 +12,7 @@
 </script>
 
 <Page next={{ text: 'Using the 1.9 GDPS', url: '/using-the-gdps' }}>
-	<div class="section">
+	<section>
 		<h1>Introduction</h1>
 
 		<p>Welcome to the 1.9 Geometry Dash Private Server!</p>
@@ -23,16 +23,15 @@
 		</p>
 
 		<p>
-			<i>Why does this website exist then?</i> To be completely honest, the official 1.9 GDPS website is a bit scattered, and it can be a bit of a puzzle to
-			scrape together information from there. In particular, when it comes to modding, some of the information can only be found in the 1.9 GDPS Discord server and isn't present on the official website. 
+			<i>Why does this website exist then?</i> A lot of the information regarding the 1.9 GDPS is scattered between the official website and the Discord, and it can be tricky to piece everything together without a guided walkthrough. Also I just like pretty websites. Sorry Absolute :p
 		</p>
 
 		<p>
 			Please do check out <Link href="https://19gdps.com">the official website</Link>.
 		</p>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="what-is-gdps">What is the 1.9 GDPS?</h2>
 
 		<p>
@@ -48,9 +47,9 @@
 			technically be downloading the <i>client</i>. The client is the game application that runs on your computer, and the server is the database that
 			your client connects to to play online and use online features such as loading user levels, uploading levels, saving account progress, etc.
 		</p>
-	</div>
+	</section>
 
-	<div class="section">
+	<section>
 		<h2 id="installation">Installation</h2>
 
 		<p>
@@ -81,7 +80,7 @@
 		<p>
 			The rest is pretty straightforward; It'll have you pick a location for the app&mdash;if you're not sure, stick with the default. It'll ask if you want to make a desktop shortcut too; That one's up to you.
 		</p>
-	</div>
+	</section>
 
 	<section>
 		<h2 id="troubleshooting">Troubleshooting</h2>

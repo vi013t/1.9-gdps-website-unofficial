@@ -24,14 +24,14 @@
 </script>
 
 <Page nosidebar>
-	<div class="section">
+	<section>
 		<h1>1.9 GDPS Demon List</h1>
 
 		<p>
 			The 1.9 GDPS Demon List is a ranking of the hardest verified levels uploaded to the 1.9 GDPS.
 			Also consider checking out <Link href="https://demonlist.19gdps.com/demonlist">the official website</Link>.
 		</p>
-	</div>
+	</section>
 
 	<div class="demons">
 		{#await demons then demons}
@@ -102,7 +102,7 @@
 		background-color: black;
 	}
 
-	.section {
+	section {
 		margin-bottom: 2rem;
 	}
 </style>

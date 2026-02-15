@@ -26,7 +26,7 @@
 	{#if !nosidebar}
 		<Sidebar bind:this={sidebar} />
 	{/if}
-	<section class="section">
+	<article>
 		{@render children()}
 
 		<div class="nav-buttons">
@@ -43,7 +43,7 @@
 				</a>
 			{/if}
 		</div>
-	</section>
+	</article>
 </main>
 
 <style>
@@ -56,18 +56,18 @@
 		}
 
 		@media (orientation: landscape) {
-			.section {
+			article {
 				width: 60%;
 			}
 		}
 
 		@media (orientation: portrait) {
-			.section {
+			article {
 				width: 100%;
 			}
 		}
 
-		.section {
+		article {
 			padding: 3rem;
 			margin-left: auto;
 			margin-right: auto;
