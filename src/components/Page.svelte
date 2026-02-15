@@ -142,6 +142,10 @@
 				padding: 1rem;
 				border-radius: 0.5em;
 
+				:global(details) {
+					background-color: #1e1e2e;
+				}
+
 				:global(img) {
 					border: 2px solid #cdd6f4;
 					border-radius: 0.5em;

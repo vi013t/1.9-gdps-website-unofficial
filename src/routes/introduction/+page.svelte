@@ -78,35 +78,8 @@
 			Alternatively, you can reach all of these download links from <Link href="https://19gdps.com/download.php">the official 1.9 GDPS website</Link>.
 		</p>
 
-		<p>When installing the 1.9 GDPS, Windows may warn you that the file is from an unverified publisher and may be malicious:</p>
-
-		<details>
-			<summary>Windows Warning</summary>
-			<img src={windowsWarning} alt="windows warning" />
-		</details>
-
 		<p>
-			Similarly, for <Link href={virusFlag}>technical reasons</Link>, your antivirus may flag the application. Scary! Don't worry, the 1.9 GDPS is totally safe. If you have security concerns, you can view <Link href="/resources#source-codes"
-				>the source code for the project</Link
-			> and verify for yourself that it's safe. To proceed with the installation, click "More Info":
-		</p>
-			
-		<details>
-			<summary>More Info</summary>
-			<img src={windowsMoreInfo} alt="windows more info" />
-		</details>
-
-		<p>
-			and then click "Run anyway":
-		</p>
-
-		<details>
-			<summary>Run Anyway</summary>
-			<img src={windowsRunAnyway} alt="windows run anyway" />
-		</details>
-
-		<p>
-			This will take you into the installer. The rest is pretty straightforward; It'll have you pick a location for the app&mdash;if you're not sure, stick with the default. It'll ask if you want to make a desktop shortcut too; That one's up to you.
+			The rest is pretty straightforward; It'll have you pick a location for the app&mdash;if you're not sure, stick with the default. It'll ask if you want to make a desktop shortcut too; That one's up to you.
 		</p>
 	</div>
 
@@ -114,6 +87,41 @@
 		<h2 id="troubleshooting">Troubleshooting</h2>
 
 		<p>You might run into some issues during installation. Don't worry, we'll work through it. Below are the most common errors you might encounter.</p>
+
+		<details>
+			<summary>Windows Protected Your PC / Antivirus Flag</summary>
+
+			<p>When installing the 1.9 GDPS, Windows may warn you that the file is from an unverified publisher and may be malicious:</p>
+
+			<details>
+				<summary>Windows Warning</summary>
+				<img src={windowsWarning} alt="windows warning" />
+			</details>
+
+			<p>
+				Similarly, for <Link href={virusFlag}>technical reasons</Link>, your antivirus may flag the application. Scary! Don't worry, the 1.9 GDPS is totally safe. If you have security concerns, you can view <Link href="/resources#source-codes"
+					>the source code for the project</Link
+				> and verify for yourself that it's safe. To proceed with the installation, click "More Info":
+			</p>
+				
+			<details>
+				<summary>More Info</summary>
+				<img src={windowsMoreInfo} alt="windows more info" />
+			</details>
+
+			<p>
+				and then click "Run anyway":
+			</p>
+
+			<details>
+				<summary>Run Anyway</summary>
+				<img src={windowsRunAnyway} alt="windows run anyway" />
+			</details>
+
+			<p>
+				This will take you into the installer.
+			</p>
+		</details>
 
 		<details>
 			<summary>MCVCP100.dll was not found</summary>
