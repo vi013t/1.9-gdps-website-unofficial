@@ -320,7 +320,7 @@
 		margin-bottom: 1rem;
 		border-radius: 0.5em;
 		outline: 3px solid rgba(255, 255, 255, 70%);
-		outline-offset: -3px;
+		outline-offset: -2px;
 
 		div {
 			display: flex;
@@ -343,7 +343,7 @@
 			margin-top: 0.5em;
 			color: black;
 			outline: 2px solid rgba(255, 255, 255, 70%);
-			outline-offset: -2px;
+			outline-offset: -1px;
 		}
 
 		i {

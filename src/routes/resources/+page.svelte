@@ -320,7 +320,7 @@
 			width: 20rem;
 			background: linear-gradient(to bottom right, #f9e2af, #fab387, #eba0ac);
 			outline: 3px solid rgba(255, 255, 255, 70%);
-			outline-offset: -3px;
+			outline-offset: -2px;
 			border-radius: 1em;
 			color: black;
 			display: flex;
@@ -339,7 +339,7 @@
 			font-size: 0.8rem;
 			background-image: linear-gradient(to bottom right, #444455, #333344);
 			outline: 2px solid rgba(255, 255, 255, 30%);
-			outline-offset: -2px;
+			outline-offset: -1px;
 		}
 	}
 
