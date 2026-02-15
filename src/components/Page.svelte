@@ -159,6 +159,10 @@
 				flex-direction: column;
 				box-shadow: 0px 0px 1rem black;
 			}
+			
+			:global(details + details) {
+				margin-top: 1rem;
+			}
 
 			:global(i) {
 				color: white;

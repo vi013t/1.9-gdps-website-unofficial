@@ -1,4 +1,5 @@
 <script>
+	import virusFlag from "../../assets/images/virus_flag.png";
 	import windowsMoreInfo from '../../assets/images/windows_more_info.png';
 	import windowsRunAnyway from '../../assets/images/windows_run_anyway.png';
 	import windowsWarning from '../../assets/images/windows_warning.png';
@@ -77,38 +78,6 @@
 			Alternatively, you can reach all of these download links from <Link href="https://19gdps.com/download.php">the official 1.9 GDPS website</Link>.
 		</p>
 
-		<p>
-			On Windows, before actually running the installer, it's a prerequisite that you have <b>both the x86 and x64</b> versions of
-			<b>both the 2010 and 2013</b> Visual Studio C++ Redistributables installed (4 installers total). You can download the installers here:
-		</p>
-
-		<div class="buttons">
-			<a href="/download/vcredist_2010_x86.exe" download class="visual-studio">
-				<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
-				2010 x86 Redistributables
-			</a>
-			<a href="/download/vcredist_2010_x64.exe" download class="visual-studio">
-				<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
-				2010 x64 Redistributables
-			</a>
-			<a href="/download/vcredist_2013_x86.exe" download class="visual-studio">
-				<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
-				2013 x86 Redistributables
-			</a>
-			<a href="/download/vcredist_2013_x64.exe" download class="visual-studio">
-				<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
-				2013 x64 Redistributables
-			</a>
-		</div>
-
-		<p>
-			Alternatively, you can download the 2010 redistributables directly from <Link
-				href="https://www.microsoft.com/en-us/download/details.aspx?id=26999">the official website</Link
-			>, and the 2013 redistributables from <Link href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">that official website</Link> too.
-		</p>
-
-		<p>Upon completion, it's recommended to restart your computer to ensure the software is to be useable.</p>
-
 		<p>When installing the 1.9 GDPS, Windows may warn you that the file is from an unverified publisher and may be malicious:</p>
 
 		<details>
@@ -117,7 +86,7 @@
 		</details>
 
 		<p>
-			Scary! Don't worry, the 1.9 GDPS is totally safe. If you have security concerns, you can view <Link href="/resources#source-codes"
+			Similarly, for <Link href={virusFlag}>technical reasons</Link>, your antivirus may flag the application. Scary! Don't worry, the 1.9 GDPS is totally safe. If you have security concerns, you can view <Link href="/resources#source-codes"
 				>the source code for the project</Link
 			> and verify for yourself that it's safe. To proceed with the installation, click "More Info":
 		</p>
@@ -144,19 +113,62 @@
 	<section>
 		<h2 id="troubleshooting">Troubleshooting</h2>
 
-		<p>You might run into some issues during installation. Don't worry, we'll work through it.</p>
+		<p>You might run into some issues during installation. Don't worry, we'll work through it. Below are the most common errors you might encounter.</p>
 
-		<p>
-			<b>MSVCP100.dll was not found</b> - This error means that there's an issue with your <b>2010</b> Visual Studio C++ Redistributables. Ensure you
-			have <b>both the x86 and x64</b> versions installed. You can rerun the redistributable installers and click "repair" to ensure all of the files are
-			installed correcty.
-		</p>
+		<details>
+			<summary>MCVCP100.dll was not found</summary>
+			<p>
+				<b>MSVCP100.dll was not found</b> - This error means that you're missing the <b>2010</b> Visual Studio C++ Redistributables. These should already be on your computer if you have Geometry Dash installed from Steam. If you're still getting this error, you can manually download and install the redistributables. Make sure you install <b>both the x86 and x64</b> versions. The installers are included here:
+			</p>
 
-		<p>
-			<b>MSVCP120.dll was not found</b> - This error means that there's an issue with your <b>2013</b> Visual Studio C++ Redistributables. Ensure you
-			have <b>both the x86 and x64</b> versions installed. You can rerun the redistributable installers and click "repair" to ensure all of the files are
-			installed correcty.
-		</p>
+			<div class="buttons">
+				<a href="/download/vcredist_2010_x86.exe" download class="visual-studio">
+					<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+					2010 x86 Redistributables
+				</a>
+				<a href="/download/vcredist_2010_x64.exe" download class="visual-studio">
+					<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+					2010 x64 Redistributables
+				</a>
+			</div>
+
+			<p>
+				Alternatively, you can download the 2010 redistributables from <Link href="https://www.microsoft.com/en-us/download/details.aspx?id=26999">the official website</Link>.
+			</p>
+
+			<p>Upon completion, it's recommended to restart your computer to ensure the software is to be useable.</p>
+		</details>	
+
+		<details>
+			<summary>MSVCP120.dll was not found</summary>
+			<p>
+				<b>MSVCP120.dll was not found</b> - This error means that you're missing the <b>2013</b> Visual Studio C++ Redistributables. These should already be on your computer if you have Geometry Dash installed from Steam. If you're still getting this error, you can manually download and install the redistributables. Make sure you install <b>both the x86 and x64</b> versions. The installers are included here:
+			</p>
+
+			<div class="buttons">
+				<a href="/download/vcredist_2013_x86.exe" download class="visual-studio">
+					<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+					2013 x86 Redistributables
+				</a>
+				<a href="/download/vcredist_2013_x64.exe" download class="visual-studio">
+					<VisualStudioIcon stroke="black" style="width: 1.5em; height: 1.5em;" />
+					2013 x64 Redistributables
+				</a>
+			</div>
+
+			<p>
+				Alternatively, you can download the 2013 redistributables from <Link href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">the official website</Link>.
+			</p>
+
+			<p>Upon completion, it's recommended to restart your computer to ensure the software is to be useable.</p>
+		</details>
+
+		<details>
+			<summary>steam_api.dll is missing</summary>
+			<p>
+				<b>steam_api.dll is missing</b> - This error can happen if your antivirus flags the application. The recommended solution is to add an exclusion for the 1.9 GDPS directory to your antivirus. The instructions will vary depending on your antivirus&mdash;just make sure to reinstall the game once you're done.
+			</p>
+		</details>	
 
 		<p>
 			Other than that, it's just the usual stuff&mdash;try restarting your computer, rerunning the installer, redownloading the installer, etc. If
@@ -179,6 +191,10 @@
 
 		<p>
 			...or through <Link href="https://19gdps.com/gdapi/tools/account/registerAccount.php">the official website</Link> directly. You can then log into that account in the 1.9 game client.
+		</p>
+
+		<p>
+			Your username must <b>only</b> contain <b>letters and numbers</b>. There have been cases where the website allows you to create a username with specicial symbols in it, and this can make it impossible for you to log in to the game.
 		</p>
 	</section>
 </Page>
