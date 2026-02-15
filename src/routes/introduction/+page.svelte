@@ -3,6 +3,7 @@
 	import windowsMoreInfo from '../../assets/images/windows_more_info.png';
 	import windowsRunAnyway from '../../assets/images/windows_run_anyway.png';
 	import windowsWarning from '../../assets/images/windows_warning.png';
+	import CopyButton from "../../components/CopyButton.svelte";
 	import Header from "../../components/Header.svelte";
 	import AndroidIcon from '../../components/icons/AndroidIcon.svelte';
 	import VisualStudioIcon from '../../components/icons/VisualStudioIcon.svelte';
@@ -104,6 +105,11 @@
 
 			<code class="block">
 				/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+				<CopyButton 
+					text='/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"' 
+					stroke="#666688" 
+					style="width: 1.5em; height: 1.5em;"
+				/>
 			</code>
 
 			<Note>
@@ -120,6 +126,7 @@
 
 			<code class="block">
 				brew install --cask wine-stable
+				<CopyButton text="brew install --cask wine-stable" stroke="#666688" style="width: 1.5em; height: 1.5em;" />
 			</code>
 
 			<p>

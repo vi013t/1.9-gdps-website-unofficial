@@ -85,6 +85,9 @@
 				&.block {
 					padding: 1em;
 					display: block;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
 				}
 			}
 

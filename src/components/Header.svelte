@@ -12,6 +12,8 @@
 
 	let open = $state(true);
 
+	// this is real hacky.., someone should probably do something about that....
+	// (cough) vi (cough)
 	function toggleOpen(event: MouseEvent) {
 		let parent = (event.target as HTMLElement).parentElement!.parentElement!;
 		parent.style.maxHeight = open ? parent.previousElementSibling ? "6.1rem" : "7.25rem" : "400rem";

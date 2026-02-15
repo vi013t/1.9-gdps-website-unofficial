@@ -6,6 +6,7 @@
 </script>
 
 <div>
+	<!-- this was going to be a lightbulb but...,, i ended up using a star temporarily n i lowkey think its cuter ^_^ -->
 	<StarIcon stroke="black" style="width: 1.5em; height: 1.5em;"/>
 	<b>NOTE</b>
 	<br/>
