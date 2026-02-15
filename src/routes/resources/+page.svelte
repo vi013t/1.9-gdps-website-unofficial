@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Header from '../../components/Header.svelte';
 	import BlueskyIcon from '../../components/icons/BlueskyIcon.svelte';
 	import CodeIcon from '../../components/icons/CodeIcon.svelte';
 	import DiscordIcon from '../../components/icons/DiscordIcon.svelte';
@@ -18,7 +19,7 @@
 
 <Page previous={{ text: 'Modding', url: '/modding' }}>
 	<section>
-		<h1>Resources</h1>
+		<Header id="resources" element="h1">Resources</Header>
 
 		<p>
 			The 1.9 GDPS is a relatively smaller project compared to the official 2.2 version of the game, so it can be hard to find support and resources
@@ -27,7 +28,7 @@
 	</section>
 
 	<section>
-		<h2 id="official-website">Official Website</h2>
+		<Header id="official-website">Official Website</Header>
 
 		<p>
 			First and foremost, consider checking out <Link href="https://19gdps.com">the official 1.9 GDPS website</Link>. There's a lot of useful tools
@@ -37,7 +38,7 @@
 	</section>
 
 	<section>
-		<h2 id="discord">Discord Server</h2>
+		<Header id="discord">Discord Server</Header>
 
 		<p>
 			The official 1.9 GDPS discord server is the best place for support relating to the 1.9 GDPS. There are channels for modding, level feedback,
@@ -57,7 +58,7 @@
 	</section>
 
 	<section>
-		<h2 id="source-code">Source Code</h2>
+		<Header id="source-code">Source Code</Header>
 
 		<p>If you're interested in the source code for various 1.9 GDPS related things, some relevant ones are accesible here:</p>
 
@@ -106,7 +107,7 @@
 	</section>
 
 	<section>
-		<h2 id="other-links">Other Links</h2>
+		<Header id="other-links">Other Links</Header>
 
 		<p>Here are some other miscellaneous links relating to the 1.9 GDPS:</p>
 

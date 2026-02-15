@@ -3,17 +3,19 @@
 	import windowsMoreInfo from '../../assets/images/windows_more_info.png';
 	import windowsRunAnyway from '../../assets/images/windows_run_anyway.png';
 	import windowsWarning from '../../assets/images/windows_warning.png';
+	import Header from "../../components/Header.svelte";
 	import AndroidIcon from '../../components/icons/AndroidIcon.svelte';
 	import VisualStudioIcon from '../../components/icons/VisualStudioIcon.svelte';
 	import WindowsIcon from '../../components/icons/WindowsIcon.svelte';
 	import ZipIcon from '../../components/icons/ZipIcon.svelte';
 	import Link from '../../components/Link.svelte';
+	import Note from "../../components/Note.svelte";
 	import Page from '../../components/Page.svelte';
 </script>
 
 <Page next={{ text: 'Using the 1.9 GDPS', url: '/using-the-gdps' }}>
 	<section>
-		<h1>Introduction</h1>
+		<Header id="introduction" element="h1">Introduction</Header>
 
 		<p>Welcome to the 1.9 Geometry Dash Private Server!</p>
 
@@ -32,7 +34,7 @@
 	</section>
 
 	<section>
-		<h2 id="what-is-gdps">What is the 1.9 GDPS?</h2>
+		<Header id="what-is-gdps">What is the 1.9 GDPS?</Header>
 
 		<p>
 			The 1.9 GDPS is a build of Geometry Dash that is locked to the 1.9 update version of the game. While there are some small quality of life
@@ -50,7 +52,7 @@
 	</section>
 
 	<section>
-		<h2 id="installation">Installation</h2>
+		<Header id="installation">Installation</Header>
 
 		<p>
 			The 1.9 GDPS is available on Windows and Android. The Window's version is available as both an installer and a zip file. If you're unsure of the
@@ -80,10 +82,75 @@
 		<p>
 			The rest is pretty straightforward; It'll have you pick a location for the app&mdash;if you're not sure, stick with the default. It'll ask if you want to make a desktop shortcut too; That one's up to you.
 		</p>
+
+		<p>
+			You can also set up the 1.9 GDPS on macOS or Linux; It's just a bit more involved since you need to go through a virtualization layer. Put simply, the game only exists as a Windows application, but there are programs on macOS and Linux that can run Windows applications.
+		</p>
+
+		<details>
+			<summary>Installing the 1.9 GDPS on macOS</summary>
+
+			<p>
+				Installing the 1.9 GDPS on macOS requires macOS 10.15 &lbrack;Catalina&rbrack; or later.
+			</p>
+
+			<p>
+				To install the 1.9 GDPS on macOS, we're going to run it through <Link href="https://www.winehq.org/">Wine</Link>. Wine is an architecture for macOS and Linux that lets you run Windows apps on those platforms.
+			</p>
+
+			<p>
+				To install Wine, you first need <b>Homebrew</b>. Homebrew is a command line interface (CLI) that can install software on your system. To install Homebrew, open a terminal and paste in the following command:
+			</p>
+
+			<code class="block">
+				/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+			</code>
+
+			<Note>
+				Never paste code you don't understand into your terminal. You can (and should) verify that this is safe by checking <Link href="https://brew.sh/">the official website</Link>.
+			</Note>
+
+			<p>
+				It will prompt you to enter your password. For security, it won't show anything as you type, but it is listening!
+			</p>
+
+			<p>
+				Once it's done installing, open a new terminal window so that the software is applied, and run:
+			</p>
+
+			<code class="block">
+				brew install --cask wine-stable
+			</code>
+
+			<p>
+				This will install the latest stable version of Wine, and will prompt you for your password again.
+			</p>
+
+			<p>
+				Download the 1.9 GDPS using the <b>Windows Zip</b> download above. Unzip it, and double click <b>DontRenameMeThxDash.exe</b> to run it. If it doesn't choose Wine Stable as the default application to open it, right-click and select "Open With...", then select Wine Stable.
+			</p>
+		</details>
+
+		<details>
+			<summary>Installing the 1.9 GDPS on Linux</summary>
+
+			<p>
+				I'm going to be a little more terse with this one, because if you're running Linux you've basically signed a waiver saying you know what you're doing.
+			</p>
+
+			<p>
+				You can run the 1.9 GDPS through <Link href="https://www.winehq.org/">Wine</Link>.
+			</p>
+
+			<p>
+				Alternatively, you can run the 1.9 GDPS through Steam and Proton by <Link href="https://help.steampowered.com/en/faqs/view/4B8B-9697-2338-40EC">adding it as a non-Steam game</Link> and enabling <Link href="https://www.protondb.com/">Proton</Link> for it.
+			</p>
+		</details>
+
 	</section>
 
 	<section>
-		<h2 id="troubleshooting">Troubleshooting</h2>
+		<Header id="troubleshooting">Troubleshooting</Header>
 
 		<p>You might run into some issues during installation. Don't worry, we'll work through it. Below are the most common errors you might encounter.</p>
 
@@ -184,7 +251,7 @@
 	</section>
 
 	<section>
-		<h2 id="getting-started">Getting Started</h2>
+		<Header id="getting-started">Getting Started</Header>
 
 		<p>
 			The 1.9 GDPS is a standalone application, not something that runs within your regular Geometry Dash installation. If you installed it correctly,
@@ -200,9 +267,9 @@
 			...or through <Link href="https://19gdps.com/gdapi/tools/account/registerAccount.php">the official website</Link> directly. You can then log into that account in the 1.9 game client.
 		</p>
 
-		<p>
+		<Note>
 			Your username must <b>only</b> contain <b>letters and numbers</b>. There have been cases where the website allows you to create a username with specicial symbols in it, and this can make it impossible for you to log in to the game.
-		</p>
+		</Note>
 	</section>
 </Page>
 

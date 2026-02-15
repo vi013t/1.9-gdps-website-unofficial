@@ -80,6 +80,12 @@
 				padding: 0.2em;
 				border-radius: 0.3em;
 				display: inline;
+				color: white;
+
+				&.block {
+					padding: 1em;
+					display: block;
+				}
 			}
 
 			:global(h1) {

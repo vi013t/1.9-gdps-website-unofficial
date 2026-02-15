@@ -8,6 +8,7 @@
 	import purpuraScreenshot from "../../assets/images/purpura.png";
 	import texturePack from "../../assets/images/texture_pack.jpg";
 	import texturePackFolder from "../../assets/images/texture_pack_folder.png";
+	import Header from "../../components/Header.svelte";
 	import BricksIcon from "../../components/icons/BricksIcon.svelte";
 	import DiscordIcon from '../../components/icons/DiscordIcon.svelte';
 	import DownloadIcon from '../../components/icons/DownloadIcon.svelte';
@@ -22,7 +23,7 @@
 
 <Page previous={{ text: 'Using the 1.9 GDPS', url: '/using-the-gdps' }} next={{ text: 'Resources', url: '/resources' }}>
 	<section>
-		<h1>Modding</h1>
+		<Header id="modding" element="h1">Modding</Header>
 
 		<p>
 			<b>Mods</b> allow users to add or change features within the game.
@@ -30,7 +31,7 @@
 	</section>
 
 	<section>
-		<h2 id="modding-with-geode">Modding With Geode</h2>
+		<Header id="modding-with-geode">Modding With Geode</Header>
 
 		<p>
 			<Link href="https://geode-sdk.org/">Geode</Link> is a mod loader for Geometry Dash, and is currently the only widely used and supported one that exists.
@@ -84,7 +85,7 @@
 	</section>
 
 	<section>
-		<h2 id="polzhax">PolzHax</h2>
+		<Header id="polzhax">PolzHax</Header>
 
 		<p>
 			<Link href="https://github.com/Pololak/PolzHax">PolzHax</Link> is probably the most used and fleshed-out mod currently available for the 1.9 GDPS,
@@ -123,7 +124,7 @@
 	</section>
 
 	<section>
-		<h2 id="other-mods">Other Mods</h2>
+		<Header id="other-mods">Other Mods</Header>
 
 		<p>Outside of PolzHax, there exists a few smaller utility mods for the 1.9 GDPS:</p>
 
@@ -221,7 +222,7 @@
 	</section>
 
 	<section class="texture-packs">
-		<h2>Texture Packs</h2>
+		<Header id="texture-packs">Texture Packs</Header>
 
 		<p>
 			<b>Texture packs</b> change the textures of the UI elements of your client. For example, this is a texture pack:

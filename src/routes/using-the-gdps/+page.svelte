@@ -5,13 +5,14 @@
 	import rateButton from "../../assets/images/rate_button.png";
 	import rateScreen from "../../assets/images/rate_screen.png";
 	import superRating from "../../assets/images/super_rating.png";
+	import Header from "../../components/Header.svelte";
 	import Link from '../../components/Link.svelte';
 	import Page from '../../components/Page.svelte';
 </script>
 
 <Page previous={{ text: 'Introduction', url: '/introduction' }} next={{ text: 'Modding', url: '/modding' }}>
 	<section>
-		<h1>Using the 1.9 GDPS</h1>
+		<Header id="using-the-gdps" element="h1">Using the 1.9 GDPS</Header>
 
 		<p>
 			For the most part, assuming you play Geometry Dash, navigating the 1.9 GDPS will be incredibly intuitive&mdash;there are just a few extra features
@@ -20,7 +21,7 @@
 	</section>
 
 	<section>
-		<h2 id="mod-menu">The Mod Menu</h2>
+		<Header id="mod-menu">The Mod Menu</Header>
 
 		<p>
 			The 1.9 GDPS comes with a built in "mod menu"&mdash;it's a suite of quality-of-life tools and utilities that can make the game more enjoyable,
@@ -45,7 +46,7 @@
 	</section>
 
 	<section>
-		<h2 id="transferring-levels">Transferring Levels</h2>
+		<Header id="transferring-levels">Transferring Levels</Header>
 
 		<p>
 			You may want to upload level you made on the 1.9 GDPS to the official Geometry Dash 2.2 servers, or even import a 2.2 level into a 1.9 level in
@@ -121,7 +122,7 @@
 	</section>
 
 	<section>
-		<h2 id="reuploading-songs">Reuploading Songs</h2>
+		<Header id="reuploading-songs">Reuploading Songs</Header>
 
 		<p>
 			Due to recent changes to the Newgrounds and Soundcloud APIs, some songs are now unavailable. Because of this, the 1.9 GDPS has a song reupload tool that allows reuploading songs to the servers. Use it here:
@@ -138,7 +139,7 @@
 	</section>
 
 	<section>
-		<h2 id="level-rates">Level Rates</h2>
+		<Header id="level-rates">Level Rates</Header>
 
 		<p>
 			Unlike in the official 2.2 servers where only moderators can send levels for ratings, in the 1.9 GDPS, <i>anyone</i> can send a level to be rated. The <b>star button</b> on the side of any level can be used to rate it:
